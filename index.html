@@ -1,0 +1,2989 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distribuidor Independiente COMASI | Complementos Naturales</title>
+
+  <!-- ============================================================
+       GOOGLE ANALYTICS (GA4)
+       Reemplaza G-XXXXXXXXXX con tu ID de medición
+       ============================================================ -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){ dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+
+  <!-- ============================================================
+       FUENTES - Google Fonts
+       ============================================================ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400&family=DM+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    /* ==========================================================
+       VARIABLES GLOBALES DE COLOR Y DISEÑO
+       ========================================================== */
+    :root {
+      --pri: #5B2D8E;
+      --pri-l: #8B5FC7;
+      --pri-d: #3D1A64;
+      --acc: #00B4D8;
+      --acc-l: #48CAE4;
+      --gold: #D4A843;
+      --rose: #E8A0BF;
+      --grn: #2D8E5B;
+      --pink: #D64B8A;
+      --bg: #F8F7F4;
+      --bg2: #EFEDE8;
+      --text: #1A1A2E;
+      --text2: #6B6B80;
+      --white: #FFF;
+      --shadow: 0 4px 24px rgba(91,45,142,.1);
+      --shadow-lg: 0 8px 40px rgba(91,45,142,.15);
+      --r: 14px;
+      --r-sm: 10px;
+    }
+
+    /* ==========================================================
+       RESET Y BASE
+       ========================================================== */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      overflow-x: hidden;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    h1, h2, h3, h4, h5 {
+      font-family: 'Playfair Display', serif;
+      font-weight: 900;
+    }
+    img { max-width: 100%; display: block; }
+    button { font-family: 'DM Sans', sans-serif; }
+
+    /* ==========================================================
+       BANNER DE CONFIANZA (scroll infinito)
+       ========================================================== */
+    .trust-ban {
+      background: var(--pri);
+      color: #fff;
+      overflow: hidden;
+      padding: 9px 0;
+      position: relative;
+      z-index: 100;
+    }
+    .trust-track {
+      display: flex;
+      animation: scrollB 22s linear infinite;
+      width: max-content;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 40px;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      letter-spacing: .3px;
+    }
+    @keyframes scrollB {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ==========================================================
+       NAVBAR
+       ========================================================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 99;
+      background: rgba(248,247,244,.96);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(91,45,142,.06);
+      transition: .3s;
+    }
+    .nav.scrolled { box-shadow: var(--shadow); }
+
+    .nav-in {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 70px;
+    }
+
+    /* --- Logo (#10: imagen editable) --- */
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--pri);
+    }
+    .nav-logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .nav-logo-t {
+      font-family: 'Playfair Display', serif;
+      font-size: 24px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .nav-logo-s {
+      font-size: 9px;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      color: var(--text2);
+      text-transform: uppercase;
+      display: block;
+      margin-top: -2px;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* --- Links de navegación --- */
+    .nav-links {
+      display: flex;
+      gap: 4px;
+      list-style: none;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 8px;
+      transition: .3s;
+    }
+    .nav-links a:hover,
+    .nav-links a.active {
+      background: var(--pri);
+      color: #fff;
+    }
+
+    /* --- Lado derecho del nav --- */
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .nav-ph {
+      font-size: 13px;
+      color: var(--text2);
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .nav-ph:hover { color: var(--pri); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--pri), var(--pri-l));
+      color: #fff;
+      border: none;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      transition: .3s;
+    }
+    .nav-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(91,45,142,.3);
+    }
+
+    /* --- Botón carrito --- */
+    .cart-btn {
+      position: relative;
+      background: none;
+      border: 2px solid var(--pri);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      cursor: pointer;
+      transition: .3s;
+      color: var(--pri);
+    }
+    .cart-btn:hover { background: var(--pri); color: #fff; }
+    .cart-count {
+      position: absolute;
+      top: -4px;
+      right: -4px;
+      background: #E53935;
+      color: #fff;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      font-size: 10px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .cart-count.hidden { display: none; }
+
+    /* --- Animación del badge del carrito (#11) --- */
+    @keyframes cartPop {
+      0%   { transform: scale(1); }
+      50%  { transform: scale(1.5); }
+      100% { transform: scale(1); }
+    }
+    .cart-count.pop { animation: cartPop .4s ease; }
+
+    /* --- Botón hamburguesa (móvil) --- */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 5px;
+    }
+    .hamburger span {
+      width: 22px;
+      height: 2.5px;
+      background: var(--pri);
+      border-radius: 2px;
+      transition: .3s;
+    }
+
+    /* ==========================================================
+       HERO (sección principal)
+       ========================================================== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0d021a 0%, var(--pri-d) 40%, var(--pri) 100%);
+    }
+    /* #3: Imagen de fondo del Hero - EDITAR URL AQUÍ */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: .15;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(13,2,26,.85), rgba(61,26,100,.7));
+    }
+    .hero-dots {
+      position: absolute;
+      inset: 0;
+      opacity: .06;
+      background-image: radial-gradient(white 1px, transparent 1px);
+      background-size: 50px 50px;
+    }
+    .hero-glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: .25;
+    }
+    .hero-g1 { background: var(--acc); top: -200px; right: -100px; }
+    .hero-g2 { background: var(--rose); bottom: -200px; left: -100px; opacity: .15; }
+
+    .hero-in {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 60px;
+      align-items: center;
+      width: 100%;
+    }
+    .hero-content { color: #fff; }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.15);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      backdrop-filter: blur(10px);
+      animation: fiu .8s ease;
+    }
+    .hero-title {
+      font-size: clamp(36px, 5vw, 64px);
+      font-weight: 900;
+      line-height: 1.08;
+      margin-bottom: 18px;
+      animation: fiu .8s ease .15s both;
+    }
+    .hero-title span {
+      background: linear-gradient(135deg, var(--acc-l), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .hero-desc {
+      font-size: 18px;
+      line-height: 1.7;
+      color: rgba(255,255,255,.75);
+      max-width: 480px;
+      margin-bottom: 36px;
+      animation: fiu .8s ease .3s both;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      animation: fiu .8s ease .45s both;
+    }
+    .btn-p {
+      background: linear-gradient(135deg, var(--acc), var(--acc-l));
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .3s;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-p:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(0,180,216,.4);
+    }
+    .btn-o {
+      border: 2px solid rgba(255,255,255,.3);
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 50px;
+      font-size: 15px;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: .3s;
+      backdrop-filter: blur(5px);
+    }
+    .btn-o:hover {
+      background: rgba(255,255,255,.1);
+      border-color: rgba(255,255,255,.4);
+    }
+
+    /* #5: Hero cards con imagen de fondo editable */
+    .hero-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 380px;
+      animation: fiu 1s ease .4s both;
+    }
+    .hero-card {
+      background: rgba(255,255,255,.07);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--r);
+      padding: 28px 20px;
+      text-align: center;
+      color: #fff;
+      transition: .3s;
+      position: relative;
+      overflow: hidden;
+      min-height: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: var(--card-bg);
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .hero-card::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,.55);
+      z-index: 1;
+    }
+    .hero-card > * { position: relative; z-index: 2; }
+    .hero-card:hover {
+      transform: translateY(-4px);
+    }
+    .hero-card-icon {
+      font-size: 32px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .hero-card h4 {
+      font-size: 16px;
+      font-weight: 700;
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 3px;
+      text-shadow: 0 1px 4px rgba(0,0,0,.4);
+    }
+    .hero-card p {
+      font-size: 12px;
+      color: rgba(255,255,255,.8);
+      font-family: 'DM Sans', sans-serif;
+      text-shadow: 0 1px 3px rgba(0,0,0,.3);
+    }
+
+    @keyframes fiu {
+      from { opacity: 0; transform: translateY(25px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==========================================================
+       BARRA DE CARACTERÍSTICAS
+       ========================================================== */
+    .feat-bar {
+      background: var(--white);
+      padding: 40px 24px;
+      border-bottom: 1px solid rgba(0,0,0,.05);
+    }
+    .feat-in {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 30px;
+    }
+    .feat-item { display: flex; align-items: center; gap: 14px; }
+    .feat-ic {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+    .feat-ic.pu { background: rgba(91,45,142,.08); }
+    .feat-ic.bl { background: rgba(0,180,216,.08); }
+    .feat-ic.gr { background: rgba(45,142,91,.08); }
+    .feat-ic.go { background: rgba(212,168,67,.08); }
+    .feat-t h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    .feat-t p { font-size: 12px; color: var(--text2); font-weight: 400; }
+
+    /* ==========================================================
+       SECCIONES GENERALES
+       ========================================================== */
+    .sec {
+      padding: 80px 24px;
+      position: relative;
+      min-height: auto;
+    }
+    .sec-full {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    /* Imagen de fondo para cualquier sección */
+    .sec-bg {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+    }
+    .sec-bg-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+    }
+    .sec > *:not(.sec-bg):not(.sec-bg-overlay) {
+      position: relative;
+      z-index: 2;
+    }
+    .sec-hd { text-align: center; margin-bottom: 50px; }
+    .sec-lb {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--pri);
+      background: rgba(91,45,142,.06);
+      padding: 6px 18px;
+      border-radius: 50px;
+      margin-bottom: 14px;
+    }
+    .sec-tt {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 900;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+    .sec-ds {
+      font-size: 16px;
+      color: var(--text2);
+      max-width: 560px;
+      margin: 0 auto;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+    }
+
+    /* ==========================================================
+       CATEGORÍAS (#4: imágenes editables)
+       ========================================================== */
+    .cats-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 28px;
+    }
+    .cat-card {
+      text-align: center;
+      cursor: pointer;
+      transition: .3s;
+      text-decoration: none;
+      color: var(--text);
+    }
+    .cat-card:hover { transform: translateY(-5px); }
+    .cat-ic {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin: 0 auto 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      transition: .3s;
+      overflow: hidden;
+    }
+    .cat-card:hover .cat-ic { box-shadow: var(--shadow-lg); }
+    .cat-ic img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+    .cat-ic.vi { background: linear-gradient(135deg, #FFE5E5, #FFB3B3); }
+    .cat-ic.be { background: linear-gradient(135deg, #F3E5F5, #E1BEE7); }
+    .cat-ic.nu { background: linear-gradient(135deg, #FFF3E0, #FFE0B2); }
+    .cat-ic.de { background: linear-gradient(135deg, #E8F5E9, #C8E6C9); }
+    .cat-ic.bb { background: linear-gradient(135deg, #E0F7FA, #B2EBF2); }
+    .cat-nm { font-size: 14px; font-weight: 700; font-family: 'DM Sans', sans-serif; }
+    .cat-ct { font-size: 11px; color: var(--text2); }
+
+    /* ==========================================================
+       PRODUCTOS (#5: imagen principal + galería en modal)
+       ========================================================== */
+    .prod-sec { background: var(--bg2); }
+    .filter-bar {
+      max-width: 1200px;
+      margin: 0 auto 36px;
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .fbtn {
+      padding: 8px 20px;
+      border-radius: 50px;
+      border: 1.5px solid rgba(91,45,142,.15);
+      background: #fff;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .3s;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+    }
+    .fbtn:hover, .fbtn.active {
+      background: var(--pri);
+      color: #fff;
+      border-color: var(--pri);
+    }
+
+    .prods-grid {
+      max-width: 1260px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 20px;
+    }
+    .p-card {
+      background: #fff;
+      border-radius: var(--r);
+      overflow: hidden;
+      transition: .35s;
+      border: 1px solid rgba(0,0,0,.04);
+      position: relative;
+    }
+    .p-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+    }
+    .p-badge {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 3;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      color: #fff;
+    }
+    .bg-vi { background: #FF6B6B; }
+    .bg-be { background: var(--pink); }
+    .bg-nu { background: var(--gold); }
+    .bg-de { background: var(--grn); }
+    .bg-bb { background: var(--acc); }
+    .p-disc {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      z-index: 3;
+      background: #E53935;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 50px;
+      font-size: 10px;
+      font-weight: 700;
+    }
+    .p-img {
+      width: 100%;
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, #f8f6fc, #f0ecf5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+    }
+    .p-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .p-body { padding: 16px 18px; }
+    .p-name {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      margin-bottom: 2px;
+      color: var(--text);
+      cursor: pointer;
+    }
+    .p-format { font-size: 11px; color: var(--text2); margin-bottom: 6px; font-weight: 500; }
+    .p-desc {
+      font-size: 12px;
+      color: var(--text2);
+      margin-bottom: 10px;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .p-prices { display: flex; align-items: baseline; gap: 8px; margin-bottom: 12px; }
+    .p-old { font-size: 13px; color: #aaa; text-decoration: line-through; font-weight: 500; }
+    .p-new { font-size: 20px; font-weight: 800; color: var(--pri); }
+    .p-btns { display: flex; gap: 6px; }
+    .p-btn-wa {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      border-radius: 8px;
+      background: #25D366;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .p-btn-wa:hover { background: #20BD5A; transform: translateY(-1px); }
+    .p-btn-cart {
+      flex: 1;
+      padding: 8px;
+      border: 2px solid var(--pri);
+      border-radius: 8px;
+      background: #fff;
+      color: var(--pri);
+      font-size: 12px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 4px;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .p-btn-cart:hover { background: var(--pri); color: #fff; transform: translateY(-1px); }
+
+    /* ==========================================================
+       PACKS (#2: espacio para foto)
+       ========================================================== */
+    .packs-grid {
+      max-width: 1260px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 22px;
+    }
+    .pk-card {
+      background: linear-gradient(145deg, #f8f4ff, #fff);
+      border: 2px solid rgba(91,45,142,.06);
+      border-radius: var(--r);
+      overflow: hidden;
+      transition: .35s;
+      position: relative;
+      cursor: pointer;
+    }
+    .pk-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, var(--pri), var(--acc));
+      z-index: 1;
+    }
+    .pk-card:hover {
+      border-color: var(--pri-l);
+      box-shadow: var(--shadow-lg);
+      transform: translateY(-4px);
+    }
+    .pk-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      background: linear-gradient(135deg, #f3eef8, #ece6f5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      overflow: hidden;
+    }
+    .pk-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      image-rendering: -webkit-optimize-contrast;
+      padding: 8px;
+    }
+    .pk-body { padding: 24px; }
+    .pk-lb {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--pri);
+      background: rgba(91,45,142,.07);
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-bottom: 10px;
+    }
+    .pk-nm {
+      font-size: 22px;
+      font-weight: 900;
+      margin-bottom: 6px;
+      font-family: 'Playfair Display', serif;
+    }
+    .pk-ds {
+      font-size: 13px;
+      color: var(--text2);
+      margin-bottom: 12px;
+      line-height: 1.6;
+      font-weight: 400;
+    }
+    .pk-prods { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 14px; }
+    .pk-prods span {
+      background: #fff;
+      border: 1px solid rgba(91,45,142,.1);
+      padding: 4px 12px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--pri);
+    }
+    .pk-ft {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .pk-btns { display: flex; gap: 6px; }
+
+    /* ==========================================================
+       ECOSISTEMA COMASI (#6: imágenes editables)
+       ========================================================== */
+    .eco-sec {
+      background: linear-gradient(135deg, var(--pri-d), var(--pri));
+      color: #fff;
+      position: relative;
+    }
+    /* #6: Imagen de fondo Ecosistema - EDITAR URL */
+    .eco-sec .sec-bg {
+      opacity: .1;
+    }
+    .eco-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+    }
+    .eco-card {
+      background: rgba(255,255,255,.07);
+      border: 1px solid rgba(255,255,255,.08);
+      border-radius: var(--r);
+      padding: 22px 16px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      transition: .3s;
+    }
+    .eco-card:hover {
+      transform: translateY(-4px);
+      background: rgba(255,255,255,.12);
+    }
+    .eco-time {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--acc-l);
+      margin-bottom: 8px;
+    }
+    .eco-img {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 0 auto 8px;
+    }
+    .eco-prods {
+      font-size: 12px;
+      color: rgba(255,255,255,.7);
+      line-height: 1.7;
+      font-weight: 400;
+    }
+
+    /* ==========================================================
+       TESTIMONIOS (#7: fotos de perfil editables)
+       ========================================================== */
+    .test-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+    .test-card {
+      background: #fff;
+      border-radius: var(--r);
+      padding: 26px;
+      border: 1px solid rgba(0,0,0,.04);
+      transition: .3s;
+    }
+    .test-card:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
+    .test-q {
+      font-size: 32px;
+      color: var(--pri-l);
+      opacity: .3;
+      font-family: 'Playfair Display', serif;
+      margin-bottom: 6px;
+      line-height: 1;
+    }
+    .test-txt {
+      font-size: 14px;
+      color: var(--text2);
+      line-height: 1.7;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+    .test-auth { display: flex; align-items: center; gap: 12px; }
+    .test-av {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--pri-l), var(--acc));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-weight: 700;
+      font-size: 16px;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .test-av img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .test-nm { font-weight: 700; font-size: 14px; }
+    .test-st { color: var(--gold); font-size: 12px; }
+
+    /* ==========================================================
+       CONTACTO (#8: logos oficiales de redes)
+       ========================================================== */
+    .contact-grid {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: start;
+    }
+    .contact-info h3 { font-size: 28px; margin-bottom: 14px; font-weight: 900; }
+    .contact-info > p {
+      color: var(--text2);
+      margin-bottom: 24px;
+      line-height: 1.7;
+      font-size: 15px;
+      font-weight: 400;
+    }
+    .c-item { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+    .c-ic {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: rgba(91,45,142,.05);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+    .c-txt a { color: var(--text); text-decoration: none; font-weight: 600; font-size: 15px; }
+    .c-txt a:hover { color: var(--pri); }
+    .c-txt small { color: var(--text2); font-size: 12px; display: block; }
+
+    /* --- Redes sociales con SVG oficiales (#8) --- */
+    .soc-links { display: flex; gap: 10px; margin-top: 20px; }
+    .soc-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      transition: .3s;
+      color: #fff;
+    }
+    .soc-link svg { width: 20px; height: 20px; fill: #fff; }
+    .soc-link.ig { background: linear-gradient(135deg, #E1306C, #F77737); }
+    .soc-link.fb { background: #1877F2; }
+    .soc-link.tk { background: #010101; }
+    .soc-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,.2);
+    }
+
+    /* --- Formulario de contacto --- */
+    .c-form { background: var(--bg2); border-radius: var(--r); padding: 28px; }
+    .c-form h4 { font-size: 20px; margin-bottom: 18px; font-weight: 900; }
+    .fg { margin-bottom: 12px; }
+    .fg label {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text2);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    .fg input, .fg textarea, .fg select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1.5px solid rgba(0,0,0,.08);
+      border-radius: var(--r-sm);
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      transition: .3s;
+      background: #fff;
+    }
+    .fg input:focus, .fg textarea:focus, .fg select:focus {
+      outline: none;
+      border-color: var(--pri);
+    }
+    .fg textarea { resize: vertical; min-height: 80px; }
+    .btn-sub {
+      width: 100%;
+      padding: 14px;
+      background: linear-gradient(135deg, var(--pri), var(--pri-l));
+      color: #fff;
+      border: none;
+      border-radius: var(--r-sm);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+      font-family: 'DM Sans', sans-serif;
+    }
+    .btn-sub:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(91,45,142,.3);
+    }
+
+    /* ==========================================================
+       FOOTER (#13: compacto en móvil)
+       ========================================================== */
+    .footer {
+      background: var(--text);
+      color: rgba(255,255,255,.65);
+      padding: 36px 24px 20px;
+    }
+    .footer-in {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 30px;
+      margin-bottom: 24px;
+    }
+    .footer-brand .flogo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 900;
+      color: #fff;
+      letter-spacing: 2px;
+    }
+    .footer-brand .fsub {
+      font-size: 9px;
+      color: rgba(255,255,255,.4);
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      margin-bottom: 8px;
+      display: block;
+    }
+    .footer-brand p { font-size: 13px; line-height: 1.7; max-width: 260px; }
+    .footer h5 {
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      letter-spacing: .5px;
+    }
+    .footer ul { list-style: none; }
+    .footer ul li { margin-bottom: 6px; }
+    .footer ul a {
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      font-size: 13px;
+      transition: .3s;
+      font-weight: 400;
+    }
+    .footer ul a:hover { color: var(--acc-l); }
+    .footer-bot {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+    }
+
+    /* ==========================================================
+       BENEFICIOS / GARANTÍAS
+       ========================================================== */
+    .benefits-sec {
+      background: var(--bg2);
+      padding: 50px 24px;
+    }
+    .benefits-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 20px;
+    }
+    .benefit-card {
+      background: #fff;
+      border-radius: var(--r);
+      padding: 32px 20px;
+      text-align: center;
+      transition: .3s;
+      border: 1px solid rgba(0,0,0,.04);
+    }
+    .benefit-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+    .benefit-icon {
+      width: 60px;
+      height: 60px;
+      margin: 0 auto 16px;
+    }
+    .benefit-icon svg {
+      width: 100%;
+      height: 100%;
+    }
+    .benefit-card h4 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .benefit-card p {
+      font-size: 12px;
+      color: var(--text2);
+      line-height: 1.5;
+    }
+
+    /* ==========================================================
+       WHATSAPP FLOTANTE
+       ========================================================== */
+    .wa-fab {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 56px;
+      height: 56px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 28px;
+      text-decoration: none;
+      z-index: 998;
+      box-shadow: 0 4px 20px rgba(37,211,102,.4);
+      transition: .3s;
+      animation: pulse 2s infinite;
+    }
+    .wa-fab:hover { transform: scale(1.1); }
+    @keyframes pulse {
+      0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.4); }
+      50%      { box-shadow: 0 4px 30px rgba(37,211,102,.6), 0 0 0 10px rgba(37,211,102,.08); }
+    }
+
+    /* ==========================================================
+       CARRITO LATERAL (drawer)
+       ========================================================== */
+    .cart-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.4);
+      backdrop-filter: blur(3px);
+      z-index: 1001;
+    }
+    .cart-overlay.open { display: block; }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -420px;
+      width: 400px;
+      max-width: 90vw;
+      height: 100vh;
+      background: #fff;
+      z-index: 1002;
+      transition: .4s;
+      display: flex;
+      flex-direction: column;
+      box-shadow: -4px 0 30px rgba(0,0,0,.15);
+    }
+    .cart-drawer.open { right: 0; }
+    .cart-hd {
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(0,0,0,.06);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .cart-hd h3 { font-size: 22px; font-weight: 900; }
+    .cart-close {
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      padding: 4px;
+      color: var(--text2);
+    }
+    .cart-body { flex: 1; overflow-y: auto; padding: 16px 20px; }
+    .cart-empty { text-align: center; padding: 40px 0; color: var(--text2); }
+    .cart-empty span { font-size: 48px; display: block; margin-bottom: 10px; }
+
+    .ci { display: flex; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,.04); align-items: center; }
+    .ci-ic {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      background: var(--bg2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      flex-shrink: 0;
+      overflow: hidden;
+    }
+    .ci-ic img { width: 100%; height: 100%; object-fit: cover; }
+    .ci-info { flex: 1; min-width: 0; }
+    .ci-nm { font-size: 14px; font-weight: 700; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ci-pr { font-size: 15px; font-weight: 800; color: var(--pri); }
+    .ci-qty { display: flex; align-items: center; gap: 6px; }
+    .ci-qty button {
+      width: 28px;
+      height: 28px;
+      border-radius: 6px;
+      border: 1px solid rgba(0,0,0,.1);
+      background: #fff;
+      font-size: 14px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s;
+      font-weight: 600;
+    }
+    .ci-qty button:hover { background: var(--bg2); }
+    .ci-qty span { font-size: 14px; font-weight: 600; min-width: 20px; text-align: center; }
+    .ci-rm { background: none; border: none; color: #E53935; font-size: 16px; cursor: pointer; padding: 4px; }
+
+    .cart-ft {
+      padding: 16px 20px;
+      border-top: 1px solid rgba(0,0,0,.06);
+      background: #faf9f7;
+    }
+    .cart-totals { margin-bottom: 12px; }
+    .cart-row { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; color: var(--text2); }
+    .cart-row.total {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--text);
+      margin-top: 8px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(0,0,0,.08);
+    }
+    .cart-row .savings { color: #E53935; font-weight: 600; }
+    .cart-actions { display: flex; flex-direction: column; gap: 8px; }
+    .cart-wa {
+      padding: 13px;
+      border: none;
+      border-radius: var(--r-sm);
+      background: #25D366;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .cart-wa:hover { background: #20BD5A; }
+    .cart-clear {
+      padding: 8px;
+      border: none;
+      border-radius: var(--r-sm);
+      background: none;
+      color: var(--text2);
+      font-size: 12px;
+      cursor: pointer;
+      text-decoration: underline;
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    /* ==========================================================
+       MODAL DE PRODUCTO / PACK (#5: galería 5 imágenes)
+       ========================================================== */
+    .modal-ov {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.5);
+      backdrop-filter: blur(4px);
+      z-index: 1000;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .modal-ov.active { display: flex; }
+    .modal {
+      background: #fff;
+      border-radius: var(--r);
+      max-width: 600px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      padding: 32px;
+      position: relative;
+      animation: modIn .3s ease;
+    }
+    @keyframes modIn {
+      from { opacity: 0; transform: scale(.95) translateY(20px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .mod-close {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: none;
+      background: var(--bg);
+      font-size: 16px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: .2s;
+    }
+    .mod-close:hover { background: #eee; }
+
+    /* Galería de imágenes en modal */
+    .mod-gallery {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 16px;
+      overflow-x: auto;
+      padding-bottom: 6px;
+    }
+    .mod-gallery img {
+      width: 90px;
+      height: 90px;
+      border-radius: 8px;
+      object-fit: cover;
+      cursor: pointer;
+      border: 2px solid transparent;
+      flex-shrink: 0;
+      transition: .2s;
+      background: var(--bg2);
+    }
+    .mod-gallery img:hover,
+    .mod-gallery img.active {
+      border-color: var(--pri);
+    }
+    .mod-main-img {
+      width: 100%;
+      max-height: 260px;
+      object-fit: contain;
+      border-radius: var(--r-sm);
+      margin-bottom: 14px;
+      background: var(--bg2);
+    }
+
+    .mod-pn { font-size: 26px; font-weight: 900; margin-bottom: 4px; }
+    .mod-cat {
+      display: inline-block;
+      padding: 3px 10px;
+      border-radius: 50px;
+      font-size: 10px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .mod-sec { margin-bottom: 14px; }
+    .mod-sec h5 {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 800;
+      color: var(--pri);
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      margin-bottom: 6px;
+    }
+    .mod-sec p, .mod-sec li { font-size: 14px; color: var(--text2); line-height: 1.7; }
+    .mod-sec ul { list-style: none; padding: 0; }
+    .mod-sec ul li { padding: 3px 0 3px 18px; position: relative; }
+    .mod-sec ul li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--grn);
+      font-weight: 700;
+      font-size: 12px;
+    }
+    .mod-prices { display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px; }
+    .mod-old { font-size: 16px; color: #aaa; text-decoration: line-through; }
+    .mod-new { font-size: 28px; font-weight: 700; color: var(--pri); }
+    .mod-btns { display: flex; gap: 8px; }
+    .mod-btn-wa {
+      flex: 1;
+      padding: 14px;
+      border: none;
+      border-radius: var(--r-sm);
+      background: #25D366;
+      color: #fff;
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .mod-btn-wa:hover { background: #20BD5A; }
+    .mod-btn-cart {
+      flex: 1;
+      padding: 14px;
+      border: 2px solid var(--pri);
+      border-radius: var(--r-sm);
+      background: #fff;
+      color: var(--pri);
+      font-size: 15px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: .3s;
+      font-family: 'DM Sans', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .mod-btn-cart:hover { background: var(--pri); color: #fff; }
+
+    /* ==========================================================
+       MENÚ MÓVIL (#12: panel lateral 75% con overlay)
+       ========================================================== */
+    .mob-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.4);
+      z-index: 199;
+    }
+    .mob-overlay.active { display: block; }
+
+    .mob-nav {
+      position: fixed;
+      top: 0;
+      left: -80%;
+      width: 75%;
+      max-width: 320px;
+      height: 100vh;
+      background: linear-gradient(180deg, var(--pri-d), #1a0a30);
+      z-index: 200;
+      padding: 80px 28px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      overflow-y: auto;
+      transition: .35s ease;
+      box-shadow: 4px 0 30px rgba(0,0,0,.3);
+    }
+    .mob-nav.active { left: 0; }
+
+    .mob-close {
+      position: absolute;
+      top: 18px;
+      left: 20px;
+      font-size: 28px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--gold);
+      font-weight: 700;
+    }
+    .mob-nav a {
+      display: block;
+      padding: 13px 0;
+      font-size: 17px;
+      font-weight: 600;
+      color: rgba(255,255,255,.85);
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      transition: .2s;
+    }
+    .mob-nav a:hover { color: var(--acc-l); padding-left: 8px; }
+
+    /* ==========================================================
+       RESPONSIVE
+       ========================================================== */
+    @media (max-width: 1024px) {
+      .hero-in { grid-template-columns: 1fr; text-align: center; }
+      .hero-desc { margin: 0 auto 32px; }
+      .hero-btns { justify-content: center; }
+      .hero-cards { margin: 30px auto 0; }
+      .feat-in { grid-template-columns: 1fr 1fr; }
+      .eco-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .footer-in { grid-template-columns: 1fr 1fr; }
+      .benefits-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-right .nav-ph, .nav-right .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      /* #7: Hero ajustes móvil */
+      .hero { padding-top: 100px; padding-bottom: 30px; min-height: auto; }
+      .hero-in { gap: 20px; }
+      .hero-badge { margin-bottom: 16px; }
+      .hero-cards { margin: 16px auto 0; max-width: 280px; gap: 10px; }
+      .hero-card { padding: 16px 12px; }
+      .cats-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+      .test-grid { grid-template-columns: 1fr; }
+      .packs-grid { grid-template-columns: 1fr; }
+      .prods-grid { grid-template-columns: repeat(2, 1fr); }
+      .feat-in { grid-template-columns: 1fr 1fr; gap: 16px; }
+      .sec { padding: 50px 16px; }
+      .benefits-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+      .benefits-sec { padding: 40px 16px; }
+      .benefit-card { padding: 24px 16px; }
+
+      /* #13: Footer ULTRA compacto en móvil */
+      .footer { padding: 20px 16px 10px; }
+      .footer-in {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px 16px;
+        margin-bottom: 10px;
+      }
+      .footer-brand { grid-column: 1 / -1; text-align: center; margin-bottom: 4px; }
+      .footer-brand .flogo { font-size: 18px; }
+      .footer-brand .fsub { font-size: 8px; margin-bottom: 4px; }
+      .footer-brand p { display: none; }
+      .footer h5 { font-size: 11px; margin-bottom: 5px; }
+      .footer ul li { margin-bottom: 2px; }
+      .footer ul a { font-size: 11px; }
+      .footer-bot {
+        flex-direction: column;
+        gap: 2px;
+        text-align: center;
+        font-size: 10px;
+        padding-top: 8px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .prods-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+      .cats-grid { grid-template-columns: repeat(3, 1fr); gap: 10px; }
+      .cat-ic { width: 60px; height: 60px; font-size: 24px; }
+      .cat-nm { font-size: 11px; }
+      .eco-grid { grid-template-columns: 1fr 1fr; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .benefit-card { padding: 20px 12px; }
+      .benefit-icon { width: 48px; height: 48px; margin-bottom: 10px; }
+      .benefit-card h4 { font-size: 12px; }
+      .benefit-card p { font-size: 10px; }
+      .p-body { padding: 10px 12px; }
+      .p-name { font-size: 12px; }
+      .p-new { font-size: 16px; }
+      .p-old { font-size: 11px; }
+      .p-btns { flex-direction: column; }
+      .p-btn-wa, .p-btn-cart { font-size: 10px; padding: 7px 4px; }
+
+      /* Footer aún más compacto en 480px */
+      .footer-in { gap: 8px 12px; }
+      .footer-brand .flogo { font-size: 16px; }
+      .footer h5 { font-size: 10px; margin-bottom: 4px; }
+      .footer ul a { font-size: 10px; }
+      .footer ul li { margin-bottom: 1px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       BANNER DE CONFIANZA
+       ============================================================ -->
+  <div class="trust-ban">
+    <div class="trust-track">
+      <div class="trust-item">🌿 100% Ingredientes Naturales</div>
+      <div class="trust-item">🇵🇪 Producto Peruano</div>
+      <div class="trust-item">📦 Envíos a Todo el Perú</div>
+      <div class="trust-item">⭐ Más de 1000 Clientes Satisfechos</div>
+      <div class="trust-item">💚 Endulzado con Stevia</div>
+      <div class="trust-item">🔬 Fórmulas de Calidad</div>
+      <div class="trust-item">🌿 100% Ingredientes Naturales</div>
+      <div class="trust-item">🇵🇪 Producto Peruano</div>
+      <div class="trust-item">📦 Envíos a Todo el Perú</div>
+      <div class="trust-item">⭐ Más de 1000 Clientes Satisfechos</div>
+      <div class="trust-item">💚 Endulzado con Stevia</div>
+      <div class="trust-item">🔬 Fórmulas de Calidad</div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR
+       #10: Reemplaza src="" del logo con tu imagen
+       ============================================================ -->
+  <nav class="nav" id="navbar">
+    <div class="nav-in">
+      <a href="#" class="nav-logo">
+        <!-- LOGO: Reemplaza src con la ruta de tu logo -->
+        <!-- LOGO: Reemplaza src con la ruta de tu logo -->
+        <img class="nav-logo-img" src="imagenes/logos/logo-comasi.png" alt="COMASI Logo" onerror="this.style.display='none'">
+        <div>
+          <div class="nav-logo-t">COMASI</div>
+          <div class="nav-logo-s">Distribuidor Independiente</div>
+        </div>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#inicio" class="active">Inicio</a></li>
+        <li><a href="#categorias">Categorías</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#packs">Packs</a></li>
+        <li><a href="#ecosistema">Ecosistema</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+
+      <div class="nav-right">
+        <a href="tel:+51934917794" class="nav-ph">📞 +51 934 917 794</a>
+        <a href="https://wa.me/51934917794?text=Hola!%20Quiero%20información%20sobre%20productos%20COMASI" class="nav-cta" target="_blank">Consultar ▸</a>
+        <button class="cart-btn" onclick="toggleCart()">🛒<span class="cart-count hidden" id="cartCount">0</span></button>
+        <button class="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       MENÚ MÓVIL (#12: panel lateral)
+       ============================================================ -->
+  <div class="mob-overlay" id="mobOverlay" onclick="toggleMobile()"></div>
+  <div class="mob-nav" id="mobNav">
+    <button class="mob-close" onclick="toggleMobile()">✕</button>
+    <a href="#inicio" onclick="toggleMobile()">Inicio</a>
+    <a href="#categorias" onclick="toggleMobile()">Categorías</a>
+    <a href="#productos" onclick="toggleMobile()">Productos</a>
+    <a href="#packs" onclick="toggleMobile()">Packs</a>
+    <a href="#ecosistema" onclick="toggleMobile()">Ecosistema</a>
+    <a href="#contacto" onclick="toggleMobile()">Contacto</a>
+    <a href="tel:+51934917794">📞 +51 934 917 794</a>
+    <a href="mailto:infocomasi@gmail.com">✉️ infocomasi@gmail.com</a>
+  </div>
+
+  <!-- ============================================================
+       CARRITO LATERAL (drawer)
+       ============================================================ -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-hd">
+      <h3>🛒 Mi Pedido</h3>
+      <button class="cart-close" onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-body" id="cartBody">
+      <div class="cart-empty"><span>🛒</span>Tu carrito está vacío<br><small>Agrega productos para comenzar</small></div>
+    </div>
+    <div class="cart-ft" id="cartFooter" style="display:none">
+      <div class="cart-totals" id="cartTotals"></div>
+      <div class="cart-actions">
+        <button class="cart-wa" onclick="sendCartWA()">💬 Enviar Pedido por WhatsApp</button>
+        <button class="cart-clear" onclick="clearCart()">Vaciar carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       HERO - SECCIÓN PRINCIPAL
+       #3: Editar url('') para imagen de fondo
+       ============================================================ -->
+  <section class="hero" id="inicio">
+    <!-- HERO FONDO: Reemplaza url('') con la ruta de tu imagen -->
+    <div class="hero-bg" style="background-image: url('')"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-dots"></div>
+    <div class="hero-glow hero-g1"></div>
+    <div class="hero-glow hero-g2"></div>
+
+    <div class="hero-in">
+      <div class="hero-content">
+        <div class="hero-badge">🌿 Complementos Alimenticios Naturales</div>
+        <h1 class="hero-title">Un día<br> lleno de salud,<br> un día<br> <span>Inteligente</span></h1>
+        <p class="hero-desc">Empresa peruana especializada en complementos alimenticios naturales. Potenciamos tu belleza y salud con fórmulas orgánicas de alto rendimiento.</p>
+        <div class="hero-btns">
+          <a href="#productos" class="btn-p">Ver Productos →</a>
+          <a href="https://wa.me/51934917794?text=Hola!%20Quiero%20información%20sobre%20productos%20COMASI" class="btn-o" target="_blank">💬 Escríbenos</a>
+        </div>
+      </div>
+
+      <!-- #5: Hero Cards con fondo - EDITAR rutas en style de cada .hero-card -->
+      <div class="hero-cards">
+        <!-- HERO CARD 1: Vitalidad - EDITAR background-image -->
+        <div class="hero-card" style="--card-bg: url('imagenes/hero/vitalidad.webp')">
+          <span class="hero-card-icon"> </span>
+          <h4>Vitalidad</h4><p>Energía natural</p>
+        </div>
+        <!-- HERO CARD 2: Belleza - EDITAR background-image -->
+        <div class="hero-card" style="--card-bg: url('imagenes/hero/belleza.webp')">
+          <span class="hero-card-icon"> </span>
+          <h4>Belleza</h4><p>Piel y cabello</p>
+        </div>
+        <!-- HERO CARD 3: Nutrición - EDITAR background-image -->
+        <div class="hero-card" style="--card-bg: url('imagenes/hero/nutricion.webp')">
+          <span class="hero-card-icon"> </span>
+          <h4>Nutrición</h4><p>Alimentación completa</p>
+        </div>
+        <!-- HERO CARD 4: Depuración - EDITAR background-image -->
+        <div class="hero-card" style="--card-bg: url('imagenes/hero/depuracion.webp')">
+          <span class="hero-card-icon"> </span>
+          <h4>Depuración</h4><p>Desintoxica tu cuerpo</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BARRA DE CARACTERÍSTICAS
+       ============================================================ -->
+  <div class="feat-bar">
+    <div class="feat-in">
+      <div class="feat-item"><div class="feat-ic pu">🌿</div><div class="feat-t"><h4>Ingredientes Naturales</h4><p>Fórmulas orgánicas peruanas</p></div></div>
+      <div class="feat-item"><div class="feat-ic bl">🔬</div><div class="feat-t"><h4>Respaldo Científico</h4><p>Formulación de calidad</p></div></div>
+      <div class="feat-item"><div class="feat-ic gr">💚</div><div class="feat-t"><h4>Endulzado con Stevia</h4><p>Sin azúcar añadida</p></div></div>
+      <div class="feat-item"><div class="feat-ic go">🏆</div><div class="feat-t"><h4>Empresa Peruana</h4><p>Más de 35 productos</p></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       CATEGORÍAS
+       #4: Reemplaza src="" en cada categoría + fondo de sección
+       ============================================================ -->
+  <section class="sec" id="categorias">
+    <!-- CATEGORÍAS FONDO: Reemplaza url('') -->
+    <div class="sec-bg" style="background-image: url('')"></div>
+    <div class="sec-bg-overlay" style="background: rgba(248,247,244,.92)"></div>
+
+    <div class="sec-hd">
+      <div class="sec-lb">Explora</div>
+      <h2 class="sec-tt">Nuestras Categorías</h2>
+      <p class="sec-ds">Encuentra el complemento ideal según tu necesidad</p>
+    </div>
+
+    <div class="cats-grid">
+      <!-- CATEGORÍA 1: Vitalidad - Reemplaza src="" -->
+      <a class="cat-card" onclick="filterProducts('vitalidad')">
+        <div class="cat-ic vi"><img src="" alt="Vitalidad" onerror="this.outerHTML='💪'"></div>
+        <div class="cat-nm">Vitalidad</div><div class="cat-ct">7 productos</div>
+      </a>
+      <!-- CATEGORÍA 2: Belleza -->
+      <a class="cat-card" onclick="filterProducts('belleza')">
+        <div class="cat-ic be"><img src="" alt="Belleza" onerror="this.outerHTML='✨'"></div>
+        <div class="cat-nm">Belleza</div><div class="cat-ct">10 productos</div>
+      </a>
+      <!-- CATEGORÍA 3: Nutrición -->
+      <a class="cat-card" onclick="filterProducts('nutricion')">
+        <div class="cat-ic nu"><img src="" alt="Nutrición" onerror="this.outerHTML='🥗'"></div>
+        <div class="cat-nm">Nutrición</div><div class="cat-ct">8 productos</div>
+      </a>
+      <!-- CATEGORÍA 4: Depuración -->
+      <a class="cat-card" onclick="filterProducts('depuracion')">
+        <div class="cat-ic de"><img src="" alt="Depuración" onerror="this.outerHTML='🍃'"></div>
+        <div class="cat-nm">Depuración</div><div class="cat-ct">4 productos</div>
+      </a>
+      <!-- CATEGORÍA 5: Bebidas -->
+      <a class="cat-card" onclick="filterProducts('bebidas')">
+        <div class="cat-ic bb"><img src="" alt="Bebidas" onerror="this.outerHTML='💧'"></div>
+        <div class="cat-nm">Bebidas</div><div class="cat-ct">6 productos</div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PRODUCTOS
+       #5: Imágenes se gestionan desde el array JS (campo img + imgs[])
+       ============================================================ -->
+  <section class="sec prod-sec" id="productos">
+    <div class="sec-bg" style="background-image: url('')"></div>
+    <div class="sec-bg-overlay" style="background: rgba(239,237,232,.93)"></div>
+    <div class="sec-hd">
+      <div class="sec-lb">Catálogo</div>
+      <h2 class="sec-tt">Nuestros Productos</h2>
+      <p class="sec-ds">Complementos naturales de alta calidad para cada necesidad</p>
+    </div>
+    <div class="filter-bar">
+      <button class="fbtn active" onclick="filterProducts('all')">Todos</button>
+      <button class="fbtn" onclick="filterProducts('vitalidad')">💪 Vitalidad</button>
+      <button class="fbtn" onclick="filterProducts('belleza')">✨ Belleza</button>
+      <button class="fbtn" onclick="filterProducts('nutricion')">🥗 Nutrición</button>
+      <button class="fbtn" onclick="filterProducts('depuracion')">🍃 Depuración</button>
+      <button class="fbtn" onclick="filterProducts('bebidas')">💧 Bebidas</button>
+    </div>
+    <div class="prods-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- ============================================================
+       PACKS & COMBINACIONES
+       #2: Imágenes se gestionan desde el array JS (campo img)
+       ============================================================ -->
+  <section class="sec" id="packs">
+    <div class="sec-bg" style="background-image: url('')"></div>
+    <div class="sec-bg-overlay" style="background: rgba(255,255,255,.93)"></div>
+    <div class="sec-hd">
+      <div class="sec-lb">Combinaciones</div>
+      <h2 class="sec-tt">Packs & Combinaciones</h2>
+      <p class="sec-ds">Maximiza beneficios combinando productos estratégicamente</p>
+    </div>
+    <div class="packs-grid" id="packsGrid"></div>
+  </section>
+
+  <!-- ============================================================
+       ECOSISTEMA COMASI
+       #6: Reemplaza src="" en cada tarjeta + fondo de sección
+       ============================================================ -->
+  <section class="sec eco-sec" id="ecosistema">
+    <!-- ECOSISTEMA FONDO: Reemplaza url('') -->
+    <div class="sec-bg" style="background-image: url('')"></div>
+
+    <div class="sec-hd">
+      <div class="sec-lb" style="background: rgba(255,255,255,.1); color: var(--acc-l)">Guía diaria</div>
+      <h2 class="sec-tt" style="color: #fff">Ecosistema COMASI</h2>
+      <p class="sec-ds" style="color: rgba(255,255,255,.55)">Potencia cada momento del día con el producto ideal</p>
+    </div>
+
+    <div class="eco-grid">
+      <!-- ECO 1: Mañana - Reemplaza src="" -->
+      <div class="eco-card">
+        <div class="eco-time">☀️ Mañana</div>
+        <img class="eco-img" src="" alt="Mañana" onerror="this.outerHTML='<div style=&quot;font-size:28px;margin-bottom:6px&quot;>🍳</div>'">
+        <div class="eco-prods">Kajwi · Kajwi Moka · Ayllu · Garcinia · Omega</div>
+      </div>
+      <!-- ECO 2: Trabajo -->
+      <div class="eco-card">
+        <div class="eco-time">🏢 Trabajo</div>
+        <img class="eco-img" src="" alt="Trabajo" onerror="this.outerHTML='<div style=&quot;font-size:28px;margin-bottom:6px&quot;>💼</div>'">
+        <div class="eco-prods">Sayariy · Omega · Qharimax · Depura Plus</div>
+      </div>
+      <!-- ECO 3: Almuerzo -->
+      <div class="eco-card">
+        <div class="eco-time">🍽️ Almuerzo</div>
+        <img class="eco-img" src="" alt="Almuerzo" onerror="this.outerHTML='<div style=&quot;font-size:28px;margin-bottom:6px&quot;>🥗</div>'">
+        <div class="eco-prods">Energy · Colágeno · Bella · Depura Plus</div>
+      </div>
+      <!-- ECO 4: Noche -->
+      <div class="eco-card">
+        <div class="eco-time">🌙 Noche</div>
+        <img class="eco-img" src="" alt="Noche" onerror="this.outerHTML='<div style=&quot;font-size:28px;margin-bottom:6px&quot;>😴</div>'">
+        <div class="eco-prods">Sumak Plus · Regenerium · Colágeno · Samay</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIOS
+       #7: Reemplaza src="" en cada avatar de cliente
+       ============================================================ -->
+  <section class="sec" style="background: var(--bg2)">
+    <div class="sec-hd">
+      <div class="sec-lb">Experiencias</div>
+      <h2 class="sec-tt">Nuestros Clientes</h2>
+      <p class="section-subtitle">
+                Más de 4500 familias confían en nuestros suplementos. Lee sus experiencias reales.
+      </p>
+    </div>
+    <div class="test-grid">
+      <!-- CLIENTE 1: Walter Céspedes. - Reemplaza -->
+      <!-- CLIENTE 1: Walter Céspedes. --->
+      <div class="test-card"><div class="test-q">"</div><p class="test-txt">
+          Tomo Regenerium y Colágeno Bella todas las noches. Mi piel se ve más firme y me siento con más energía por las mañanas.
+        </p>
+        <div class="test-auth">
+          <div class="test-av">
+            <img src="imagenes/testimonios/walter-cespedes.webp" 
+            alt="Walter Céspedes" 
+            onerror="this.outerHTML='WC'">
+          </div>
+          <div>
+            <div class="test-nm">Walter Céspedes.</div>
+            <div class="test-st">⭐⭐⭐⭐⭐</div></div></div></div>
+      <!-- CLIENTE 2: Corina Rodriguez. -  -->
+      <div class="test-card"><div class="test-q">"</div><p class="test-txt">
+        El Kajwi Premium reemplazó mi café diario. Me da energía sin bajón y fortalece mi sistema inmune.
+      </p>
+      <div class="test-auth"><div class="test-av"><img src="imagenes/testimonios/corina-rodriguez.webp" 
+        alt="Corina Rodriguez" 
+        onerror="this.outerHTML='CR'">
+      </div>
+      <div>
+        <div class="test-nm">Corina R.</div>
+        <div class="test-st">⭐⭐⭐⭐⭐</div></div></div></div>
+      <!-- CLIENTE 3: Demetrio Reyes. -  -->
+      <div class="test-card"><div class="test-q">"</div><p class="test-txt">
+        Desde que consumo los suplementos me siento con más energía y vitalidad. He notado mejoras en mi concentración y en mi estado físico. Definitivamente los recomiendo.
+      </p>
+      <div class="test-auth"><div class="test-av"><img src="imagenes/testimonios/demetrio-reyes.webp" 
+        alt="Demetrio R." 
+        onerror="this.outerHTML='DM'">
+      </div>
+      <div>
+        <div class="test-nm">Demetrio R.</div>
+        <div class="test-st">⭐⭐⭐⭐⭐</div></div></div></div>
+      <!-- CLIENTE 4: Carlos R. -  -->
+      <div class="test-card"><div class="test-q">"</div><p class="test-txt">
+        El energy me ayudó a fortalecer mi sistema inmune y a mejorar mi rendimiento diario. Me siento menos cansado y con mejor animo. Confío claramente en sus ingredientes y beneficios.
+      </p><div class="test-auth"><div class="test-av"><img src="imagenes/testimonios/carlos-r.webp" 
+        alt="Carlos R." 
+        onerror="this.outerHTML='CR'">
+      </div>
+      <div>
+        <div class="test-nm">Carlos R.</div>
+        <div class="test-st">⭐⭐⭐⭐⭐</div></div></div></div>
+      <!-- CLIENTE 5: Flor Tucto. -  -->
+      <div class="test-card"><div class="test-q">"</div><p class="test-txt">
+        Decidí probar los productos y fue una excelente elección. He notado mejoras en mi concentración, mi ánimo y mi resistencia física. Además, son prácticos de consumir y no me generan molestias.
+      </p><div class="test-auth"><div class="test-av"><img src="imagenes/testimonios/flor-tucto.webp" 
+        alt="Flor Tucto" 
+        onerror="this.outerHTML='FT'">
+      </div>
+      <div>
+        <div class="test-nm">Flor Tucto</div>
+        <div class="test-st">⭐⭐⭐⭐⭐</div></div></div></div>
+      <!-- CLIENTE 6: Luis Castro. -  -->
+      <div class="test-card"><div class="test-q">"</div><p class="test-txt">
+        Desde que tomamos Ayllu mis hijos están más activos y no se enferman tan seguido. Nutrición completa.
+      </p><div class="test-auth"><div class="test-av"><img src="imagenes/testimonios/luis-castro.webp" 
+        alt="Laura P." 
+        onerror="this.outerHTML='LC'">
+      </div>
+      <div>
+        <div class="test-nm">Luis Castro.</div>
+        <div class="test-st">⭐⭐⭐⭐⭐</div></div></div></div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       BENEFICIOS / GARANTÍAS
+       ============================================================ -->
+  <section class="sec benefits-sec">
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="var(--grn)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="8" y="18" width="48" height="32" rx="4"/>
+            <path d="M8 28h48"/>
+            <circle cx="44" cy="38" r="4"/>
+            <path d="M20 12l6 6M38 12l-6 6"/>
+          </svg>
+        </div>
+        <h4>Envíos a todo el Perú</h4>
+        <p>Enviamos a Lima y provincias.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="var(--grn)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="10" y="14" width="44" height="36" rx="4"/>
+            <path d="M10 26h44"/>
+            <circle cx="32" cy="38" r="6"/>
+            <path d="M29 38l2 2 4-4"/>
+          </svg>
+        </div>
+        <h4>Pago seguro</h4>
+        <p>Paga con tarjeta, Yape o transferencia bancaria.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="var(--grn)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="22" r="10"/>
+            <path d="M18 52c0-8 6-14 14-14s14 6 14 14"/>
+            <path d="M40 18l4-4M24 18l-4-4"/>
+            <circle cx="28" cy="20" r="1.5" fill="var(--grn)"/>
+            <circle cx="36" cy="20" r="1.5" fill="var(--grn)"/>
+            <path d="M28 26c2 2 6 2 8 0"/>
+          </svg>
+        </div>
+        <h4>Asesoría personalizada</h4>
+        <p>Contamos con asesores especializados para atenderte.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="var(--grn)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="12" y="22" width="40" height="28" rx="3"/>
+            <path d="M12 32h40"/>
+            <path d="M22 22v-6a4 4 0 014-4h12a4 4 0 014 4v6"/>
+            <path d="M28 42h8M32 38v8"/>
+          </svg>
+        </div>
+        <h4>Retiro en punto de entrega</h4>
+        <p>Coordina y retira tu pedido en punto acordado.</p>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg viewBox="0 0 64 64" fill="none" stroke="var(--grn)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="32" cy="32" r="22"/>
+            <path d="M22 32l6 6 14-14"/>
+          </svg>
+        </div>
+        <h4>Productos pensados en ti</h4>
+        <p>Superalimentos peruanos mínimamente procesados.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       CONTACTO
+       #8: Logos SVG oficiales de redes sociales
+       ============================================================ -->
+  <section class="sec" id="contacto">
+    <div class="sec-hd">
+      <div class="sec-lb">Contáctanos</div>
+      <h2 class="sec-tt">¿Listo Para Empezar?</h2>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Distribuidor Independiente <span style="color: var(--pri)">COMASI</span></h3>
+        <p>Empresa peruana de complementos alimenticios naturales. Potenciamos tu belleza y salud con fórmulas orgánicas de calidad.</p>
+        <div class="c-item"><div class="c-ic">📱</div><div class="c-txt"><a href="tel:+51934917794">+51 934 917 794</a><small>WhatsApp y llamadas</small></div></div>
+        <div class="c-item"><div class="c-ic">✉️</div><div class="c-txt"><a href="mailto:infocomasi@gmail.com">infocomasi@gmail.com</a><small>Respuesta en 24h</small></div></div>
+
+        <!-- #3: Botón de registro como Distribuidor -->
+        <a href="https://comasiweb.com//link/page/50353" target="_blank" 
+        style="display:flex;align-items:center;gap:12px;padding:14px 20px;margin:14px 0;background:linear-gradient(135deg, var(--pri), var(--pri-l));color:#ffffffc5;border-radius:var(--r-sm);text-decoration:none;transition:.3s;font-weight:700;font-size:15px;" 
+        onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 8px 25px rgba(91,45,142,.35)'" onmouseout="this.style.transform='';this.style.boxShadow=''">
+          <span style="font-size:24px">🚀</span>
+          <span>Quiero ser Distribuidor<br><small style="font-weight:400;font-size:12px;opacity:.8">Regístrate y accede a descuentos exclusivos</small></span>
+        </a>
+
+        <div class="c-item"><div class="c-ic">🌐</div><div class="c-txt"><a href="https://www.grupocomasi.com" target="_blank">www.grupocomasi.com</a><small>Sitio oficial</small></div></div>
+
+        <!-- #8: Logos oficiales SVG de redes sociales -->
+        <div class="soc-links">
+          <a href="https://www.instagram.com/comasiinternacional?igsh=bXNxY2V0ZnRwNXFl" target="_blank" class="soc-link ig">
+            <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/share/1D6FXJJAUr/" target="_blank" class="soc-link fb">
+            <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+          </a>
+          <a href="#" target="_blank" class="soc-link tk">
+            <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <div class="c-form">
+        <h4>Solicitar Información</h4>
+        <div class="fg"><label>Nombre</label><input type="text" placeholder="Tu nombre" id="fName"></div>
+        <div class="fg"><label>Teléfono</label><input type="tel" placeholder="+51 ..." id="fPhone"></div>
+        <div class="fg"><label>Producto de interés</label>
+          <select id="fProd">
+            <option value="">Seleccionar...</option>
+            <option>Información general</option>
+            <option>Colágeno / Bella</option>
+            <option>Kajwi / Kajwi Premium</option>
+            <option>Energy / Sayariy</option>
+            <option>Regenerium</option>
+            <option>Garcinia Cambogia</option>
+            <option>Ayllu</option>
+            <option>Sumak Plus / Depura Plus</option>
+            <option>Protein Bar</option>
+            <option>Qharimax</option>
+            <option>Quiero ser Distribuidor</option>
+            <option>Packs / Combinaciones</option>
+          </select>
+        </div>
+        <div class="fg"><label>Mensaje</label><textarea placeholder="Cuéntanos..." id="fMsg"></textarea></div>
+        <button class="btn-sub" onclick="sendFormWA()">Enviar por WhatsApp 💬</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER (#13: compacto en móvil)
+       ============================================================ -->
+  <footer class="footer">
+    <div class="footer-in">
+      <div class="footer-brand">
+        <div class="flogo">COMASI</div>
+        <span class="fsub">Distribuidor Independiente</span>
+        <p>Empresa peruana de complementos alimenticios naturales.</p>
+        <p style="margin-top:6px; font-style:italic; color:rgba(255,255,255,.3); font-size:11px">"En Dios confiamos"</p>
+      </div>
+      <div>
+        <h5>Categorías</h5>
+        <ul>
+          <li><a href="#" onclick="filterProducts('vitalidad')">Vitalidad</a></li>
+          <li><a href="#" onclick="filterProducts('belleza')">Belleza</a></li>
+          <li><a href="#" onclick="filterProducts('nutricion')">Nutrición</a></li>
+          <li><a href="#" onclick="filterProducts('depuracion')">Depuración</a></li>
+          <li><a href="#" onclick="filterProducts('bebidas')">Bebidas</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Productos Top</h5>
+        <ul>
+          <li><a href="#">Regenerium</a></li>
+          <li><a href="#">Colágeno Bella</a></li>
+          <li><a href="#">Kajwi Premium</a></li>
+          <li><a href="#">Energy</a></li>
+          <li><a href="#">Ayllu</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Contacto</h5>
+        <ul>
+          <li><a href="tel:+51934917794">+51 934 917 794</a></li>
+          <li><a href="mailto:infocomasi@gmail.com">infocomasi@gmail.com</a></li>
+          <li><a href="https://www.instagram.com/comasiinternacional" target="_blank">Instagram</a></li>
+          <li><a href="https://www.facebook.com/share/1D6FXJJAUr/" target="_blank">Facebook</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bot">
+      <span>© 2026 Distribuidor Independiente COMASI</span>
+      <span>Desarrollado con 💜</span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       WHATSAPP FLOTANTE
+       ============================================================ -->
+  <a href="https://wa.me/51934917794?text=Hola!%20Quiero%20información%20sobre%20productos%20COMASI" target="_blank" class="wa-fab">
+    <svg viewBox="0 0 24 24" width="30" height="30" fill="#fff"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- ============================================================
+       MODAL DE PRODUCTO / PACK
+       ============================================================ -->
+  <div class="modal-ov" id="prodModal">
+    <div class="modal">
+      <button class="mod-close" onclick="closeModal()">✕</button>
+      <div id="modalContent"></div>
+    </div>
+  </div>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+  <script>
+    /* ==========================================================
+       DATOS: PRODUCTOS (35)
+       #5: Cada producto tiene:
+         - img: ruta imagen principal (tarjeta)
+         - imgs: array de 5 rutas para galería del modal
+       EDITAR las rutas vacías "" con tus imágenes
+       ========================================================== */
+    const P = [
+      // ---- NUTRICIÓN ----
+      { id:1,  name:"Omega 3.6.9",              cat:"nutricion",  priceOld:185, priceNew:140, icon:"🧠", 
+      img:"imagenes/logos/productos/omega.webp", 
+      imgs:["imagenes/productos/modal/omega/omega-1.webp","imagenes/productos/modal/omega/omega-2.webp","imagenes/productos/modal/omega/omega-3.webp","",""], 
+      desc:"Antes de iniciar un dia lleno de retos, las Cápsulas de Sacha Inchi para el estrés y la concentración son una excelente opción",          
+      ing:"Sacha Inchi Orgánico, Omega 3,6,9",                                                                                          
+      props:["Mejora sistema nervioso y corazón","Alivia estrés y depresión","Mejora retención y memoria","Previene problemas cardíacos, artritis, diabetes"],                                              
+      consumo:"2 cápsulas después de alimentos",       fmt:"Cápsulas 100 und / 500mg" },
+
+      { id:2,  name:"Ayllu",                     cat:"nutricion",  priceOld:220, priceNew:190, icon:"🥛", 
+      img:"imagenes/logos/productos/ayllu.webp", 
+      imgs:["imagenes/productos/modal/ayllu/ayllu-1.webp","imagenes/productos/modal/ayllu/ayllu-2.webp","imagenes/productos/modal/ayllu/ayllu-3.webp","imagenes/productos/modal/ayllu/ayllu-4.webp","imagenes/productos/modal/ayllu/ayllu-5.webp","imagenes/productos/modal/ayllu/ayllu-6.webp","imagenes/productos/modal/ayllu/ayllu-7.webp"], 
+      desc:"Ayllu es un complemento alimenticio nutritivo ideal para reforzar el desayuno o el almuerzo, proporcionando la energía necesaria para afrontar las actividades del día",               
+      ing:"Caseinato de Calcio, Leche, Quinua, Hierro, Inulina de Agave, Aguaje, Arginina, Leucina, Triptófano, Stevia, Vitaminas", 
+      props:["Rico en Calcio, Zinc y Hierro","Probióticos y fibra","Previene osteoporosis","Antioxidante (Vit C,D,E,B)","Combate anemia","Potencia sistema inmunológico","Mejora flujo sanguíneo","Estimula pérdida de peso","Beneficia la salud de huesos, piel, sangre y cabello"], 
+      consumo:"1 medida al día con desayuno en 200ml",  fmt:"Tarro 900g", sabor:"Vainilla" },
+
+      { id:3,  name:"Kajwi",                     cat:"nutricion",  priceOld:185, priceNew:150, icon:"☕", 
+      img:"imagenes/logos/productos/kajwi-bote.webp", 
+      imgs:["imagenes/productos/modal/kajwi-bote/kajwi-bote-1.webp","","","",""], 
+      desc:"Café con Ganoderma para energía e inmunidad",                 
+      ing:"Café instantáneo, Leche, Stevia, Ganoderma Lucidum, Capuchino",                                                        
+      props:["Retarda el envejecimiento","Fortalece el sistema inmunológico","Mejora la circulación sanguínea","Combate las células cancerígenas","Reduce el estrés","Regula el metabolismo"],                                            
+      consumo:"1 medida con desayuno en 200ml",         fmt:"Tarro 300g", sabor:"Capuchino" },
+
+      { id:4,  name:"Kajwi Sachet",              cat:"nutricion",  priceOld:190, priceNew:160, icon:"☕", 
+      img:"imagenes/logos/productos/kajwi-sachet.webp", 
+      imgs:["imagenes/productos/modal/kajwi-sachet/kajwi-sachet-1.webp","imagenes/productos/modal/kajwi-sachet/kajwi-sachet-2.webp","","",""], 
+      desc:"Café con Ganoderma — Presentación sachet",                    
+      ing:"Café instantáneo, Leche, Stevia, Ganoderma Lucidum, Capuchino",                                                        
+      props:["Retarda el envejecimiento","Fortalece el sistema inmunológico","Mejora la circulación sanguínea","Combate las células cancerígenas","Reduce el estrés","Regula el metabolismo"],                                            
+      consumo:"1 sachet con desayuno en 200ml",         fmt:"Caja 30 sachets", sabor:"Capuchino" },
+
+      { id:5,  name:"Kajwi Premium",             cat:"nutricion",  priceOld:180, priceNew:150, icon:"☕", 
+      img:"imagenes/logos/productos/kajwi-premium-bote.webp", 
+      imgs:["imagenes/productos/modal/kajwi-premium-bote/kajwi-premium-bote-1.webp","","","",""], 
+      desc:"Café premium con Ganoderma, Cúrcuma y Espirulina",            
+      ing:"Café liofilizado, Leche, Stevia, Ganoderma lucidum, Cúrcuma, Espirulina, Graviola, Malta",                                      
+      props:["Activa Glutatión","Protege hígado","Mejora circulación","Elimina células cancerígenas","Reduce estrés","Regula metabolismo"],                                                                   
+      consumo:"1 medida con desayuno en 200ml",         fmt:"Tarro 300g", sabor:"Capuchino" },
+
+      { id:6,  name:"Kajwi Premium Sachet",      cat:"nutricion",  priceOld:180, priceNew:160, icon:"☕", 
+      img:"imagenes/logos/productos/kajwi-primium-sachet.webp", 
+      imgs:["imagenes/productos/modal/kajwi-premium-sachet/kajwi-premium-sachet-1.webp","imagenes/productos/modal/kajwi-premium-sachet/kajwi-premium-sachet-2.webp","imagenes/productos/modal/kajwi-premium-sachet/kajwi-premium-sachet-3.webp","imagenes/productos/modal/kajwi-premium-sachet/kajwi-premium-sachet-4.webp",""], 
+      desc:"Café premium con ganoderma, Cúrcuma y Espirulina — Presentación sachet",                          
+      ing:"Café liofilizado, Leche, Stevia, Ganoderma lucidum, Cúrcuma, Espirulina, Graviola, Malta",                                      
+      props:["Activa Glutatión","Protege hígado","Mejora circulación","Elimina células cancerígenas","Reduce estrés"],                                                                                        
+      consumo:"1 sachet con desayuno en 200ml",         fmt:"Caja 30 sachets", sabor:"Capuchino" },
+
+      { id:7,  name:"Zupra",                cat:"vitalidad",  priceOld:210, priceNew:160, icon:"🍫", 
+      img:"imagenes/logos/productos/zupra-sachet.webp", 
+      imgs:["imagenes/productos/modal/zupra-sachet/zupra-sachet-1.webp","imagenes/productos/modal/zupra-sachet/zupra-sachet-2.webp","imagenes/productos/modal/zupra-sachet/zupra-sachet-3.webp","imagenes/productos/modal/zupra-sachet/zupra-sachet-4.webp","imagenes/productos/modal/zupra-sachet/zupra-sachet-5.webp","imagenes/productos/modal/zupra-sachet/zupra-sachet-6.webp"], 
+      desc:"Mantente vital y enérgico, se acabó el cansancio y los días pesados",                             
+      ing:"sandia, fresa, zanahoria, jalea real, beterraga, fruto de café, guaraná y granada",                                                               
+      props:["Potencia tus niveles de energía","Favorece el aumento de la productividad","Combate la fatiga y el cansancio","Contribuye a revitalizar cuerpo y mente","Para un dia mas activo"],                                                                                       
+      consumo:"1 sachet en el dia en 200ml", fmt:"Caja 30 sachets", sabor:"sandia" },
+
+      // ---- VITALIDAD ----
+      { id:8,  name:"Energy",                    cat:"vitalidad",  priceOld:180, priceNew:150, icon:"⚡", 
+      img:"imagenes/logos/productos/energy-bote.webp", 
+      imgs:["imagenes/productos/modal/energy-bote/energy-bote-1.webp","","","",""], 
+      desc:"Energía sostenida para deportistas y personas activas",       
+      ing:"Guaraná, Arándano, Stevia, Arginina, Vitaminas B1, B6, B12",                                                           
+      props:["Reduce el cansancio y fatiga","Reparador de músculos y tejidos","Refuerza y combate las infecciones","Gran antioxidante","Previene problemas cardíacos","Potencia sistema inmunológico","Mejora el metabolismo y la regeneración celular"],                               
+      consumo:"1 medida con almuerzo en 200ml",         fmt:"Tarro 300g", sabor:"Cereza" },
+
+      { id:9,  name:"Energy Sachet",             cat:"vitalidad",  priceOld:180, priceNew:160, icon:"⚡", 
+      img:"imagenes/logos/productos/energy-sachet.webp", 
+      imgs:["imagenes/productos/modal/energy-sachet/energy-sachet-1.webp","","","",""], 
+      desc:"Energía sostenida — Presentación sachet",                     
+      ing:"Guaraná, Arándano, Stevia, Arginina, Vitaminas B1, B6, B12",                                                           
+      props:["Reduce el cansancio y fatiga","Reparador de músculos y tejidos","Refuerza y combate las infecciones","Gran antioxidante","Previene problemas cardíacos","Potencia sistema inmunológico","Mejora el metabolismo y la regeneración celular"],                                                                                                 
+      consumo:"1 sachet con almuerzo en 200ml",         fmt:"Caja 30 sachets", sabor:"Cereza" },
+
+      { id:10, name:"Sayariy",                   cat:"vitalidad",  priceOld:180, priceNew:150, icon:"🌈", 
+      img:"imagenes/logos/productos/sayary-bote.webp", 
+      imgs:["imagenes/productos/modal/sayary-bote/sayary-bote-1.webp","imagenes/productos/modal/sayary-bote/sayary-bote-2.webp","","",""], 
+      desc:"Energía natural para todo el día",                            
+      ing:"Maíz Morado, Acai, Granada, Aguaymanto, Camu Camu, Stevia, Magnesio, Zinc, Hierro, Vitaminas B5,6,7,12",                         
+      props:["Reduce la presión arterial","Combate el asma y las alergias","Baja el azúcar en la sangre","Apto para diabéticos","Ayuda desinflamar las articulaciones","Protege la salud ocular y la retina"],                                                  
+      consumo:"2 medidas: media mañana y media tarde",  fmt:"Tarro 300g", sabor:"Cereza" },
+
+      { id:11, name:"Sayariy Sachet",            cat:"vitalidad",  priceOld:180, priceNew:160, icon:"🌈", 
+      img:"imagenes/logos/productos/sayary-sachet.webp", 
+      imgs:["imagenes/productos/modal/sayary-sachet/sayary-sachet-1.webp","","","",""], 
+      desc:"Energía natural — Presentación sachet",                       
+      ing:"Maíz Morado, Acai, Granada, Aguaymanto, Camu Camu, Stevia, Magnesio, Zinc, Hierro, Vitaminas B5,6,7,12",                                                         
+      props:["Reduce la presión arterial","Combate el asma y las alergias","Baja el azúcar en la sangre","Apto para diabéticos","Ayuda desinflamar las articulaciones","Protege la salud ocular y la retina"],                                                                                              
+      consumo:"2 sachets al día",                       fmt:"Caja 30 sachets", sabor:"Cereza" },
+
+      { id:12, name:"Qharimax",                  cat:"vitalidad",  priceOld:180, priceNew:160, icon:"🔥", 
+      img:"imagenes/logos/productos/qharimax-bote.webp", 
+      imgs:["imagenes/productos/modal/qharimax-bote/qharimax-bote-1.webp","imagenes/productos/modal/qharimax-bote/qharimax-bote-2.webp","","",""], 
+      desc:"Maca Negra y afrodisíacos para rendimiento masculino",        
+      ing:"Maca Negra, Huanarpo Macho, Chuchuhuasi, Para Para, Uña de Gato, iporuro",                                                      
+      props:["Aumenta la testosterona","Ayuda al mantenimiento de la función eréctil y al mismo tiempo cuida la prostata","Promueve la producción de espermatozoides","Estimula las funciones sexuales","Fuerza y resistencia","Desinflamante natural"],                                                     
+      consumo:"1 medida en ayunas. 1h antes del encuentro", fmt:"Tarro 300g", sabor:"Maracuyá" },
+
+      { id:13, name:"Qharimax Sachet",           cat:"vitalidad",  priceOld:190, priceNew:170, icon:"🔥", 
+      img:"imagenes/logos/productos/qharimax-sachet.webp", 
+      imgs:["imagenes/productos/modal/qharimax-sachet/qharimax-sachet-1.webp","","","",""], 
+      desc:"Rendimiento masculino — Presentación sachet",                 
+      ing:"Maca Negra, Huanarpo Macho, Chuchuhuasi, Para Para, Iporuro, Uña de Gato",                                             
+      props:["Aumenta la testosterona","Ayuda al mantenemiento de la función eréctil y al mismo tiempo cuida la prostata","Promueve la producción de espermatozoides","Estimula las funciones sexuales","Fuerza y resistencia","Desinflamante natural"],                                                                            
+      consumo:"1 sachet en ayunas",                     fmt:"Caja 30 sachets", sabor:"Maracuyá" },
+
+      // ---- BELLEZA ----
+      { id:14, name:"Colágeno Bella",            cat:"belleza",    priceOld:180, priceNew:160, icon:"🌸", 
+      img:"imagenes/logos/productos/colageno-bella-bote.webp", 
+      imgs:["imagenes/productos/modal/colageno-bella-bote/colageno-bella-bote-1.webp","imagenes/productos/modal/colageno-bella-bote/colageno-bella-bote-2.webp","","",""], 
+      desc:"Regenera piel, cabello, huesos. Combate menopausia",          
+      ing:"Colágeno hidrolizado, Aguaje, Arándano, Acai, Aguaymanto, Camu Camu, Stevia, Biotina",                                  
+      props:["Fortalece el cabello y reduce caidas","Fortalece articulaciones, huesos y uñas","Evita flacidez en la piel","Combate arrugas y lineas de expresión","Contiene fitoestrógenos naturales","Reparador de cartílagos","Vitaminas A, E y C"],                                           
+      consumo:"2 medidas: almuerzo y antes de dormir",  fmt:"Tarro 300g", sabor:"Cereza" },
+
+      { id:15, name:"Colágeno Bella Sachet",     cat:"belleza",    priceOld:190, priceNew:160, icon:"🌸", 
+      img:"imagenes/logos/productos/colageno-bella-sachet.webp", 
+      imgs:["imagenes/productos/modal/colageno-bella-sachet/colageno-bella-sachet-1.webp","imagenes/productos/modal/colageno-bella-sachet/colageno-bella-sachet-2.webp","","",""], 
+      desc:"Belleza femenina — Presentación sachet",                      
+      ing:"Colágeno hidrolizado, Aguaje, Arándano, Acai, Aguaymanto, Camu Camu, Stevia, Biotina",                                  
+      props:["Fortalece el cabello y reduce caidas","Fortalece articulaciones, huesos y uñas","Evita flacidez en la piel","Combate arrugas y lineas de expresión","Contiene fitoestrógenos naturales","Reparador de cartílagos","Vitaminas A, E y C"],                                                                                                  
+      consumo:"2 sachets al día",                       fmt:"Caja 30 sachets", sabor:"Cereza" },
+
+      { id:16, name:"Colágeno Bella Sachet Corazón", cat:"belleza", priceOld:190, priceNew:165, icon:"💖", 
+      img:"imagenes/logos/productos/colageno-bella-corazon.webp", 
+      imgs:["imagenes/productos/modal/colageno-bella-corazon/colageno-bella-corazon-1.webp","imagenes/productos/modal/colageno-bella-corazon/colageno-bella-corazon-2.webp","","",""], 
+      desc:"Regenera piel, cabello, huesos. Combate menopausia ",                   
+      ing:"Colágeno hidrolizado, Aguaje, Arándano, Acai, Aguaymanto, Camu Camu, Stevia, Biotina",                                  
+      props:["Fortalece el cabello y reduce caidas","Fortalece articulaciones, huesos y uñas","Evita flacidez en la piel","Combate arrugas y lineas de expresión","Contiene fitoestrógenos naturales","Reparador de cartílagos","Vitaminas A, E y C"],                                                                                                  
+      consumo:"2 sachets al día",                       fmt:"Caja 30 Sachet Corazón", sabor:"Cereza" },
+
+      { id:17, name:"Colágeno Doble Hidrolizado", cat:"belleza",   priceOld:180, priceNew:150, icon:"💗", 
+      img:"imagenes/logos/productos/colageno-hidrolizado-bote.webp", 
+      imgs:["imagenes/productos/modal/colageno-hidrolizado-bote/colageno-hidrolizado-bote-1.webp","","","",""], 
+      desc:"Delicioso complemento de bebida que ayuda a regenerar la piel, el cabello y las uñas",                 
+      ing:"Colágeno Hidrolizado, Camu Camu, Cloruro de Magnesio, Sulfato de Zinc, Vitamina C, Stevia",                             
+      props:["Ayuda a hidratar y rejuvenecer la piel.","Fortalece los musculos, ligamentos, cabello y uñas","Previene osteoporosis y la salud ósea.","Refuerza las defensas de inmunidad.","Favorece a salud digestiva y el confort intestinal."],                              
+      consumo:"2 medidas al día",                       fmt:"Tarro 300g", sabor:"Vainilla" },
+
+      { id:18, name:"Colágeno Doble Hidrolizado Sachet",  cat:"belleza",    priceOld:180, priceNew:160, icon:"💗", 
+      img:"imagenes/logos/productos/colageno-hidrolizado-sachet.webp", 
+      imgs:["imagenes/productos/modal/colageno-hidrolizado-sachet/colageno-hidrolizado-sachet-1.webp","imagenes/productos/modal/colageno-hidrolizado-sachet/colageno-hidrolizado-sachet-2.webp","imagenes/productos/modal/colageno-hidrolizado-sachet/colageno-hidrolizado-sachet-3.webp","imagenes/productos/modal/colageno-hidrolizado-sachet/colageno-hidrolizado-sachet-4.webp","imagenes/productos/modal/colageno-hidrolizado-sachet/colageno-hidrolizado-sachet-5.webp","imagenes/productos/modal/colageno-hidrolizado-sachet/colageno-hidrolizado-sachet-6.webp"], 
+      desc:"Doble Colágeno — Presentación sachet",                        
+      ing:"Colágeno Hidrolizado, Camu Camu, Cloruro de Magnesio, Sulfato de Zinc, Vitamina C, Stevia",                                                   
+      props:["Ayuda a hidratar y rejuvenecer la piel.","Fortalece los musculos, ligamentos, cabello y uñas.","Previene osteoporosis y la salud ósea.","Refuerza las defensas de inmunidad.","Favorece a salud digestiva y el confort intestinal."],                                                                                            
+      consumo:"2 sachets al día",                       fmt:"Caja 30 sachets", sabor:"Vainilla" },
+
+      { id:19, name:"Regenerium",                cat:"belleza",    priceOld:180, priceNew:160, icon:"🔄", 
+      img:"imagenes/logos/productos/regenerium-bote.webp", 
+      imgs:["imagenes/productos/modal/regenerium-bote/regenerium-bote-1.webp","","","",""], 
+      desc:"Regeneración celular. Rejuvenece mientras duermes",            
+      ing:"Noni, Uva, Aloe, Creatina, Stevia, Citrato de Magnesio, Arginina, Aminoácidos, Zinc, Hierro, Vitaminas, minerales",                
+      props:["Regenera las células.","Anti-inflamatorio.","Desintoxicante.","Antioxidante.","Limpia la sangre, el colon, el hígado y la piel.","Combate enfermedades virales.","Analgésico natural.","Mejora el sistema digestivo."],                    
+      consumo:"1 medida antes de acostarse",            fmt:"Tarro 300g", sabor:"Uva" },
+
+      { id:20, name:"Regenerium Sachet",         cat:"belleza",    priceOld:185, priceNew:160, icon:"🔄", 
+      img:"imagenes/logos/productos/regenerium-sachet.webp", 
+      imgs:["imagenes/productos/modal/regenerium-sachet/regenerium-sachet-1.webp","imagenes/productos/modal/regenerium-sachet/regenerium-sachet-2.webp","","",""], 
+      desc:"Regeneración celular — Presentación sachet",                  
+      ing:"Noni, Uva, Aloe, Creatina, Stevia, Citrato de Magnesio, Arginina, Aminoácidos, Zinc, Hierro, Vitaminas, minerales",                                                     
+      props:["Regenera las células.","Anti-inflamatorio.","Desintoxicante.","Antioxidante.","Limpia la sangre, el colon, el hígado y la piel.","Combate enfermedades virales.","Analgésico natural.","Mejora el sistema digestivo."],                                                                                                  
+      consumo:"1 sachet antes de dormir",               fmt:"Caja 30 sachets", sabor:"Uva" },
+
+      { id:21, name:"Garcinia Cambogia",         cat:"belleza",    priceOld:180, priceNew:160, icon:"🍊", 
+      img:"imagenes/logos/productos/garcinia-bote.webp", 
+      imgs:["imagenes/productos/modal/garcinia-bote/garcinia-bote-1.webp","imagenes/productos/modal/garcinia-bote/garcinia-bote-2.webp","imagenes/productos/modal/garcinia-bote/garcinia-bote-3.webp","imagenes/productos/modal/garcinia-bote/garcinia-bote-4.webp","imagenes/productos/modal/garcinia-bote/garcinia-bote-5.webp"], 
+      desc:"Quema grasa y desintoxica. Activa metabolismo",               
+      ing:"Garcinia Cambogia, Naranja Agria, Café Verde, L-Carnitina",                                                             
+      props:["Ayuda quemar la grasa corporal.","Disminuye el apetito y aporta energia.","Reduce los triglicéridos.","Previene enfermedades cardíacas.","Limpieza de colon.","Elimina parásitos."],                                                            
+      consumo:"1 medida en ayunas en 200ml",            fmt:"Tarro 300g", sabor:"Naranja Agria" },
+
+      { id:22, name:"Garcinia Cambogia Sachet",  cat:"belleza",    priceOld:185, priceNew:165, icon:"🍊", 
+      img:"imagenes/logos/productos/garcinia-sachet.webp", 
+      imgs:["imagenes/productos/modal/garcinia-sachet/garcinia-sachet-1.webp","imagenes/productos/modal/garcinia-sachet/garcinia-sachet-2.webp","imagenes/productos/modal/garcinia-sachet/garcinia-sachet-3.webp","",""], 
+      desc:"Quema grasa — Presentación sachet",                           
+      ing:"Garcinia Cambogia, Naranja Agria, Café Verde, L-Carnitina",                                                             
+      props:["Ayuda quemar la grasa corporal.","Disminuye el apetito y aporta energia.","Reduce los triglicéridos.","Previene enfermedades cardíacas.","Limpieza de colon.","Elimina parásitos."],                                                                                                                  
+      consumo:"1 sachet en ayunas",                     fmt:"Caja 30 sachets", sabor:"Naranja Agria" },
+
+      // ---- DEPURACIÓN ----
+      { id:23, name:"Depura Plus",               cat:"depuracion", priceOld:180, priceNew:150, icon:"🌱", 
+      img:"imagenes/logos/productos/depura-plus-bote.webp", 
+      imgs:["imagenes/productos/modal/depura-plus-bote/depura-plus-bote-1.webp","imagenes/productos/modal/depura-plus-bote/depura-plus-bote-2.webp","","",""], 
+      desc:"Oxigena sangre y desintoxica. Sabor Camu Camu",               
+      ing:"Espirulina, Moringa, Camu Camu",                                                                                        
+      props:["Refuerza el sistema inmunologico.","Mejora la función renal y hepática.","Desintoxica el organismo.","Previene el diabetes.","Facilita digestión.","Disminuye el colesterol, triglicéridos y la hipertensión.","Oxigena la sangre.","Mejora el sueño."],                                                     
+      consumo:"1 medida en ayunas en 200ml",            fmt:"Tarro 300g", sabor:"Camu Camu" },
+
+      { id:24, name:"Depura Plus Sachet",        cat:"depuracion", priceOld:180, priceNew:160, icon:"🌱", 
+      img:"imagenes/logos/productos/depura-plus-sachet.webp", 
+      imgs:["imagenes/productos/modal/depura-plus-sachet/depura-plus-sachet-1.webp","","","",""], 
+      desc:"Desintoxicación — Presentación sachet",                       
+      ing:"Espirulina, Moringa, Camu Camu",                                                                                        
+      props:["Refuerza el sistema inmunologico.","Mejora la función renal y hepática.","Desintoxica el organismo.","Previene el diabetes.","Facilita digestión.","Disminuye el colesterol, triglicéridos y la hipertensión.","Oxigena la sangre.","Mejora el sueño."],                                                                                                                    
+      consumo:"1 sachet en ayunas",                     fmt:"Caja 30 sachets", sabor:"Camu Camu" },
+
+      { id:25, name:"Sumak Plus",                cat:"depuracion", priceOld:180, priceNew:150, icon:"🍀", 
+      img:"imagenes/logos/productos/sumak-plus-bote.webp", 
+      imgs:["imagenes/productos/modal/sumak-plus-sachet/sumak-plus-sachet-1.webp","imagenes/productos/modal/sumak-plus-sachet/sumak-plus-sachet-2.webp","","",""], 
+      desc:"Clorofila para oxigenar sangre. Sabor menta",                 
+      ing:"Clorofila, Espirulina, Menta, Moringa, Camu Camu",                                                                             
+      props:["Propiedades antiflamatorios y antioxidantes.","Desintoxica el organismo.","Facilita la digestión.","Reduce triglicéridos.","Fortalece el sistema inmune y los huesos.","Oxigena la sangre","Mejora el sueño.","Evita flatulencias, mal aliento y pesadez estomacal.","Hidratación deportiva."],                            
+      consumo:"1 medida en ayunas en 200ml",            fmt:"Tarro 300g", sabor:"Menta" },
+
+      { id:26, name:"Sumak Plus Sachet",         cat:"depuracion", priceOld:180, priceNew:160, icon:"🍀", 
+      img:"imagenes/logos/productos/sumak-plus-sachet.webp", 
+      imgs:["imagenes/productos/modal/sumak-plus-sachet/sumak-plus-sachet-1.webp","imagenes/productos/modal/sumak-plus-sachet/sumak-plus-sachet-2.webp","imagenes/productos/modal/sumak-plus-sachet/sumak-plus-sachet-3.webp","imagenes/productos/modal/sumak-plus-sachet/sumak-plus-sachet-4.webp",""], 
+      desc:"Clorofila — Presentación sachet",                             
+      ing:"Clorofila, Espirulina, Menta, Moringa, Camu Camu",                                                                             
+      props:["Propiedades antiflamatorios y antioxidantes.","Desintoxica el organismo.","Facilita la digestión.","Reduce triglicéridos.","Fortalece el sistema inmune y los huesos.","Oxigena la sangre","Mejora el sueño.","Evita flatulencias, mal aliento y pesadez estomacal.","Hidratación deportiva."],                                                                                                                        
+      consumo:"1 sachet en ayunas",                     fmt:"Caja 30 sachets", sabor:"Menta" },
+
+      // ---- BEBIDAS ----
+      { id:27, name:"Citrato de Magnesio",       cat:"bebidas",    priceOld:180, priceNew:145, icon:"🍋", 
+      img:"imagenes/logos/productos/magnesio.webp", 
+      imgs:["imagenes/productos/modal/magnesio/magnesio-1.webp","","","",""], 
+      desc:"Efervescente sabor limón para estrés y calambres",            
+      ing:"Citrato de Magnesio, Limón",                                                                                            
+      props:["Mejora sueño","Reduce ansiedad","Alivia calambres","Regula presión arterial","Favorece energía celular"],                                                                                       
+      consumo:"1 sachet disolver en agua",                       fmt:"Efervescente", sabor:"Limón" },
+      
+      { id:28, name:"Samay",                     cat:"bebidas",    priceOld:180, priceNew:145, icon:"🌙", 
+      img:"imagenes/logos/productos/samay.webp", 
+      imgs:["imagenes/productos/modal/samay/samay-1.webp","imagenes/productos/modal/samay/samay-2.webp","","",""], 
+      desc:"Aliado natural para sueño profundo y reparador",              
+      ing:"Cedrón, Valeriana, Tilo, Fresa, Limón, Cacao, Magnesio, Zinc, Vit. B",                                                  
+      props:["Combate insomnio","Regula cortisol","Melatonina vegetal antioxidante","Regula sistema nervioso induce el sueño","Calidad de sueño profundo"],                                                                                           
+      consumo:"1 sachet antes de acostarse",                     fmt:"Caja 30 sachets",sabor:"Limón" },
+
+      { id:29, name:"Aquali",                    cat:"bebidas",    priceOld:10, priceNew:5.00, icon:"💧", 
+      img:"imagenes/logos/productos/bebida-aquali.webp", 
+      imgs:["imagenes/productos/modal/bebida-aquali/bebida-aquali-1.webp","imagenes/productos/modal/bebida-aquali/bebida-aquali-2.webp","","",""], 
+      desc:"Agua alcalina que equilibra y revitaliza",                    
+      ing:"Agua mineral alcalina",                                                                                                 
+      props:["Desintoxica","Antioxidante.","Equilibra el pH.","Mejora el sistema inmunidad.","Mejora la hidratación.","Cuida la piel.","Reduce glucosa."],                                                                           
+      consumo:"Beber durante el día",                   fmt:"Botella" },
+
+      { id:30, name:"Lipozen",                   cat:"nutricion",    priceOld:200, priceNew:165, icon:"💊", 
+      img:"imagenes/logos/productos/lipozen.webp", 
+      imgs:["imagenes/productos/modal/lipozen/lipozen-1.webp","imagenes/productos/modal/lipozen/lipozen-2.webp","imagenes/productos/modal/lipozen/lipozen-3.webp","imagenes/productos/modal/lipozen/lipozen-4.webp","imagenes/productos/modal/lipozen/lipozen-5.webp","imagenes/productos/modal/lipozen/lipozen-6.webp"], 
+      desc:"Un sistema digstivo sano asegura una vida larga y feliz, apoya el equilibrio de la flora intestinal, desintoxifica el higado.",                   
+      ing:"Granadilla, Tuna roja, Yacon, Aloe, Muña, Hierba luisa, Probióticos",                                                                                                             
+      props:["Ayuda a prevenir la inflamación del colon","Ayuda a limpiar el hígado graso","Mejora la absorción de nutrientes","Protege el estómago","Apoya la reducción de reacciones alérgicas"],                                                                                                                                                                  
+      consumo:"1 medida en ayunas en 200ml",                              fmt:"Caja 30 sachets", sabor:"Linaza" },
+
+      { id:31, name:"Mentor X",                  cat:"nutricion",    priceOld:200, priceNew:165, icon:"🧠", 
+      img:"imagenes/logos/productos/mentor-x.webp", 
+      imgs:["imagenes/productos/modal/mentor-x/mento-x-1.webp","imagenes/productos/modal/mentor-x/mento-x-2.webp","imagenes/productos/modal/mentor-x/mento-x-3.webp","imagenes/productos/modal/mentor-x/mento-x-4.webp","imagenes/productos/modal/mentor-x/mento-x-5.webp","imagenes/productos/modal/mentor-x/mento-x-6.webp","imagenes/productos/modal/mentor-x/mento-x-7.webp"], 
+      desc:"Suplemento necesario para enfocar tu mente y ser mas productivo, una mente mas agil y mas concentrada.",                   
+      ing:"Naranja, Zanahoria, Polen, Ajonjolí, Algarrobo, Sacha inchi, Ginseng, vitaminas y minerales",                                                                                                             
+      props:["Favorece el enfoque mental.","Contribuye a mejorar la concentración y agilidad mental.","Ayuda a fortalecer la memoria.","Puede ayudar a reducir el estrés.","Contribuye a retrasar los signos del envejecimiento."],                                                                                                                                                                  
+      consumo:"1 medida en ayunas en 200ml",                              fmt:"Caja 30 sachets", sabor:"menta" },
+
+      { id:32, name:"Munay Pro",                 cat:"vitalidad",  priceOld:250, priceNew:190, icon:"❤️", 
+      img:"imagenes/logos/productos/munay-pro.webp", 
+      imgs:["imagenes/productos/modal/munay-pro/munay-pro-1.webp","imagenes/productos/modal/munay-pro/munay-pro-2.webp","imagenes/productos/modal/munay-pro/munay-pro-3.webp","imagenes/productos/modal/munay-pro/munay-pro-4.webp","imagenes/productos/modal/munay-pro/munay-pro-5.webp","imagenes/productos/modal/munay-pro/munay-pro-6.webp","imagenes/productos/modal/munay-pro/munay-pro-7.webp","imagenes/productos/modal/munay-pro/munay-pro-8.webp"], 
+      desc:"Alimentacion con nutrientes que tu cuerpo necesita con proteinas, vitaminas y minerales",                   
+      ing:"Tarwi, Huevo, Suero de leche, Aceite de coco, Soya, Yacon, Vitaminas, Minerales, DHA, ARA.",                                                                                                             
+      props:["Contiene proteínas de alto valor nutricional","Mejora la recuperación y el crecimiento muscular","Contribuye a la salud ocular","Favorece la capacidad de aprendizaje","Apoya la salud ósea"," Fortalece la función inmunológica"],                                                                                                                                                                  
+      consumo:"1 medida en ayunas en 200ml",                              fmt:"Caja 30 sachets", sabor:"Chocolate" },
+
+      { id:33, name:"Zupra bebida",                     cat:"bebidas",    priceOld:130, priceNew:70, icon:"🧃", 
+      img:"imagenes/logos/productos/bebida-zupra.webp", 
+      imgs:["imagenes/productos/modal/bebida-zupra/bebida-zupra-1.webp","","","",""], 
+      desc:"Bebida energizante natural",                   
+      ing:"Fresa, Camu camu, Guaraná, Yacón, Stevia, Fibra de Achicoria",                                                                                                             
+      props:["bebida","Aporta energia","Mejora la digestión","Fortalece el sistema inmunológico","Ayuda a controlar el peso","Mejora la absorción de minerales"],                                                                                                                                                                  
+      consumo:"beber durante el dia",                              fmt:"SixPack de 318ml", sabor:"Cereza" },
+
+      { id:34, name:"Sixpack Vit Aloe",          cat:"bebidas",    priceOld:130, priceNew:70, icon:"🥤", 
+      img:"imagenes/logos/productos/bebida-aloe.webp", 
+      imgs:["imagenes/productos/modal/bebida-aloe/bebida-aloe-1.webp","","","",""], 
+      desc:"Bebida regeneradora con Aloe Vera",                                 
+      ing:"Aloe Vera, Pitahaya, Piña, Coco, Yacón, Estebia",                                                                                              
+      props:["Alivia malestar estomacales","Estimula y mejora la digestión","Contribuye a reducir la hinchazón y la sensación de gases","Mejora la circulacón sanguínea"],                                                                                                                                                                   
+      consumo:"Beber durante el día",                   fmt:"Sixpack de 318ml", sabor:"Piña" },
+
+      { id:35, name:"Sixpack Vit Time",          cat:"bebidas",  priceOld:130, priceNew:70, icon:"⏰", 
+      img:"imagenes/logos/productos/bebida-vit_time.webp", 
+      imgs:["imagenes/productos/modal/bebida-vit-time/vit-time-1.webp","imagenes/productos/modal/bebida-vit-time/vit-time-2.webp","imagenes/productos/modal/bebida-vit-time/vit-time-3.webp","imagenes/productos/modal/bebida-vit-time/vit-time-4.webp","imagenes/productos/modal/bebida-vit-time/vit-time-5.webp","imagenes/productos/modal/bebida-vit-time/vit-time-6.webp"], 
+      desc:"Bebida antioxidante natural",                                  
+      ing:"Fresa, Uva, Arandanos, Camu camu, Yacón, Estevia",                                                                                                
+      props:["Bebida","Colabora a prevenir la vejez prematura, antiedad.","Ayuda a reducir enfermedades crónicas.","Mejora el sistema inmunológico.","Ayuda a reducir enfermedades cardiovasculares."],                                                                                                                                                                  
+      onsumo:"Beber durante el día",                   fmt:"Sixpack de 318ml", sabor:"Uva" },
+      
+      { id:36, name:"Protein Bar",                cat:"nutricion",  priceOld:80, priceNew:60, icon:"🍫", 
+      img:"imagenes/logos/productos/protein-bar.webp", 
+      imgs:["imagenes/productos/modal/protein-bar/protein-bar-1.webp","imagenes/productos/modal/protein-bar/protein-bar-2.webp","imagenes/productos/modal/protein-bar/protein-bar-3.webp","imagenes/productos/modal/protein-bar/protein-bar-4.webp","imagenes/productos/modal/protein-bar/protein-bar-5.webp","imagenes/productos/modal/protein-bar/protein-bar-6.webp","imagenes/productos/modal/protein-bar/protein-bar-7.webp","imagenes/productos/modal/protein-bar/protein-bar-8.webp","imagenes/productos/modal/protein-bar/protein-bar-9.webp","imagenes/productos/modal/protein-bar/protein-bar-10.webp"], 
+      desc:"¡Desata tu potencial! Barra nutritiva de proteína con granos andinos",       
+      ing:"Proteína de Leche, Quinua, Nibs de Cacao, Granos Andinos, Frutas Deshidratadas, Chocolate",                                                           
+      props:["Excelente fuente de proteína 12g","Disminuye niveles de colesterol","Favorece el pre y post entrenamiento","Reduce riesgo de afecciones vasculares","Vitaminas y minerales esenciales","Energía natural para días largos"],                               
+      consumo:"Consumir como snack durante el día",         fmt:"Caja individual 35g" },
+    ];
+
+    /* ==========================================================
+       DATOS: PACKS (10)
+       #2: Cada pack tiene campo img para foto
+       ========================================================== */
+    const PKS = [
+      { id:1,  name:"Pack Limpieza & Regeneración", img:"imagenes/packs/limpieza-regeneracion.webp", 
+      imgs:["","","",""], priceOld:540, priceNew:429,
+      desc:"Desintoxica y regenera tu organismo desde adentro",    prods:["Regenerium","Garcinia Cambogia","Energy"],                      
+      benefit:"Limpieza profunda + regeneración celular + energía",   cnt:3, 
+      detail:"Ideal para personas que buscan un reset completo del organismo. Garcinia limpia y quema grasa en ayunas, Energy da vitalidad durante el día, y Regenerium regenera tus células mientras duermes." },
+
+      { id:2,  name:"Pack Belleza Total",            img:"imagenes/packs/belleza-total.webp", 
+      imgs:["","","",""], priceOld:360, priceNew:299,
+      desc:"Piel, cabello, huesos y combate signos de la edad",    prods:["Colágeno Bella","Regenerium"],                                  
+      benefit:"Rejuvenecimiento integral + colágeno + regeneración",  cnt:2, 
+      detail:"Colágeno Bella aporta fitoestrógenos y colágeno para la piel y cabello. Regenerium complementa con regeneración celular nocturna para un efecto anti-edad completo." },
+
+      { id:3,  name:"Pack Vitalidad Masculina",      img:"imagenes/packs/vitalidad-masculina.webp", 
+      imgs:["","","",""], priceOld:540, priceNew:429,
+      desc:"Rendimiento físico y sexual de forma natural",         prods:["Qharimax","Energy","Sayariy"],                                 
+      benefit:"Energía + resistencia + rendimiento",                  cnt:3, 
+      detail:"Qharimax con Maca Negra para potencia masculina, Energy para resistencia deportiva, y Sayariy para energía natural todo el día. El trío perfecto para el hombre activo." },
+
+      { id:4,  name:"Pack Nutrición Familiar",       img:"imagenes/packs/nutricion-familiar.webp", 
+      imgs:["","","",""], priceOld:540, priceNew:449,
+      desc:"Nutrición completa para toda la familia",              prods:["Ayllu","Kajwi","Omega"],                                       
+      benefit:"Desayuno nutritivo + café saludable + omegas",         cnt:3, 
+      detail:"Ayllu provee nutrición completa con minerales y probióticos. Kajwi con Ganoderma reemplaza el café regular. Omega 3.6.9 de Sacha Inchi para el cerebro y corazón." },
+
+      { id:5,  name:"Pack Detox Profundo",           img:"imagenes/packs/detox-profundo.webp", 
+      imgs:["","","",""], priceOld:540, priceNew:429,
+      desc:"Desintoxica y oxigena con la fuerza de la naturaleza", prods:["Sumak Plus","Depura Plus","Regenerium"],                        
+      benefit:"Clorofila + espirulina + regeneración celular",        cnt:3, 
+      detail:"Sumak Plus oxigena con clorofila, Depura Plus desintoxica con espirulina y moringa, Regenerium regenera las células dañadas. Triple acción depurativa." },
+
+      { id:6,  name:"Pack Dulces Sueños",            img:"imagenes/packs/dulce-sueño.webp", 
+      imgs:["","","",""], priceOld:540, priceNew:419,
+      desc:"Descanso profundo y reparador cada noche",             prods:["Samay","Regenerium","Citrato de Magnesio"],                    
+      benefit:"Sueño profundo + regeneración + relajación",           cnt:3, 
+      detail:"Samay con valeriana y melatonina vegetal para dormir, Citrato de Magnesio para relajar los músculos, Regenerium para que tu cuerpo se regenere mientras descansas." },
+
+      { id:7,  name:"Pack Colágeno Doble",           img:"imagenes/packs/doble-colageno.webp", 
+      imgs:["","","",""], priceOld:380, priceNew:290,
+      desc:"Doble acción para piel, cabello, uñas y articulaciones", prods:["Colágeno Doble Hidrolizado","Colágeno Bella"],              
+      benefit:"Colágeno para piel + fitoestrógenos",                  cnt:2, 
+      detail:"Colágeno Doble Hidrolizado con magnesio y zinc para articulaciones y piel. Colágeno Bella con fitoestrógenos y biotina especial para la mujer. Juntos potencian los resultados." },
+
+      { id:8,  name:"Pack Café & Energía",           img:"imagenes/packs/cafe-energia.webp", 
+      imgs:["","","",""], priceOld:540, priceNew:419,
+      desc:"Energía natural todo el día",                           prods:["Kajwi Premium","Energy","Sayariy"],               
+      benefit:"Café ganoderma + mocachino + energía",                  cnt:4, 
+      detail:"Empieza con Kajwi Premium en el desayuno, mantente activo con Sayariy a media mañana, y recarga con Energy al almuerzo. Energía de principio a fin." },
+
+      { id:9,  name:"Pack Mujer Integral",           img:"imagenes/packs/packs-5.webp", 
+      imgs:["","","",""], priceOld:900, priceNew:729,
+      desc:"Bienestar completo para la mujer moderna",              prods:["Colágeno Bella","Omega","Ayllu","Regenerium","Samay"],         
+      benefit:"Belleza + nutrición + regeneración + descanso",         cnt:5, 
+      detail:"El pack más completo para la mujer. Colágeno Bella para belleza, Omega para el cerebro, Ayllu para nutrición, Regenerium para regeneración y Samay para dormir bien." },
+
+      { id:10, name:"Pack Control de Peso",          img:"imagenes/packs/control-peso.webp", 
+      imgs:["","","",""], priceOld:360, priceNew:289,
+      desc:"Acelera metabolismo y quema grasa natural",             prods:["Garcinia Cambogia","Depura Plus"],                             
+      benefit:"Quema grasa + desintoxicación",                        cnt:2, 
+      detail:"Garcinia Cambogia con L-Carnitina y Café Verde quema grasa y reduce apetito. Depura Plus con espirulina y moringa desintoxica y elimina toxinas. Acompañar con 2L de agua diarios." },
+    ];
+
+
+    /* ==========================================================
+       CARRITO
+       #11: Solo abre drawer la primera vez
+       ========================================================== */
+    let cart = [];
+    let cartOpenedOnce = false;
+    let activePacks = []; // Track packs added to cart
+
+    function updateCartUI() {
+      const body = document.getElementById('cartBody');
+      const ft   = document.getElementById('cartFooter');
+      const cc   = document.getElementById('cartCount');
+      const tots = document.getElementById('cartTotals');
+
+      if (!cart.length) {
+        body.innerHTML = '<div class="cart-empty"><span>🛒</span>Tu carrito está vacío<br><small>Agrega productos para comenzar</small></div>';
+        ft.style.display = 'none';
+        cc.classList.add('hidden');
+        activePacks = [];
+        return;
+      }
+
+      cc.classList.remove('hidden');
+      cc.textContent = cart.reduce((s, i) => s + i.qty, 0);
+
+      let totalOld = 0, totalNew = 0;
+      body.innerHTML = cart.map(i => {
+        totalOld += i.priceOld * i.qty;
+        totalNew += i.priceNew * i.qty;
+        const imgHtml = i.img
+          ? `<img src="${i.img}" alt="${i.name}">`
+          : i.icon;
+        return `<div class="ci">
+          <div class="ci-ic">${imgHtml}</div>
+          <div class="ci-info">
+            <div class="ci-nm">${i.name}</div>
+            <div class="ci-pr">S/ ${i.priceNew} <small style="color:#aaa;text-decoration:line-through;font-weight:400">S/ ${i.priceOld}</small></div>
+          </div>
+          <div class="ci-qty">
+            <button onclick="changeQty(${i.id},-1)">−</button>
+            <span>${i.qty}</span>
+            <button onclick="changeQty(${i.id},1)">+</button>
+          </div>
+          <button class="ci-rm" onclick="removeItem(${i.id})">✕</button>
+        </div>`;
+      }).join('');
+
+      // Calculate pack discounts
+      let packDiscount = 0;
+      activePacks.forEach(ap => {
+        const pk = PKS.find(x => x.id === ap.pkId);
+        if (!pk) return;
+        // Check all pack products are still in cart
+        const allPresent = ap.prodIds.every(pid => cart.some(c => c.id === pid));
+        if (allPresent) {
+          // Sum of individual priceNew for pack products
+          const sumIndividual = ap.prodIds.reduce((s, pid) => {
+            const item = cart.find(c => c.id === pid);
+            return s + (item ? item.priceNew : 0);
+          }, 0);
+          packDiscount += sumIndividual - pk.priceNew;
+        }
+      });
+
+      const savings = totalOld - totalNew;
+      const finalTotal = totalNew - packDiscount;
+      
+      let totalsHtml = `
+        <div class="cart-row"><span>Subtotal (precio regular)</span><span style="text-decoration:line-through;color:#aaa">S/ ${totalOld}</span></div>
+        <div class="cart-row"><span>Descuento web</span><span class="savings">- S/ ${savings}</span></div>`;
+      
+      if (packDiscount > 0) {
+        totalsHtml += `<div class="cart-row"><span>🎁 Descuento Pack</span><span class="savings" style="color:#E53935;font-weight:700">- S/ ${packDiscount}</span></div>`;
+      }
+      
+      totalsHtml += `<div class="cart-row total"><span>Total (${cart.reduce((s,i) => s+i.qty, 0)} productos)</span><span>S/ ${finalTotal}</span></div>`;
+      
+      tots.innerHTML = totalsHtml;
+      ft.style.display = 'block';
+    }
+
+    function addToCart(id) {
+      const p = P.find(x => x.id === id);
+      if (!p) return;
+      const exist = cart.find(x => x.id === id);
+      if (exist) { exist.qty++; }
+      else { cart.push({ id: p.id, name: p.name, icon: p.icon, img: p.img, priceOld: p.priceOld, priceNew: p.priceNew, qty: 1 }); }
+      updateCartUI();
+
+      // #11: Solo abrir drawer la primera vez
+      if (!cartOpenedOnce) {
+        openCart();
+        cartOpenedOnce = true;
+      } else {
+        // Animación en el badge
+        const cc = document.getElementById('cartCount');
+        cc.classList.remove('pop');
+        void cc.offsetWidth; // forzar reflow
+        cc.classList.add('pop');
+      }
+    }
+
+    function changeQty(id, d) {
+      const i = cart.find(x => x.id === id);
+      if (!i) return;
+      i.qty += d;
+      if (i.qty < 1) i.qty = 1;
+      updateCartUI();
+    }
+
+    function removeItem(id) {
+      cart = cart.filter(x => x.id !== id);
+      // Remove packs that included this product
+      activePacks = activePacks.filter(ap => !ap.prodIds.includes(id));
+      updateCartUI();
+    }
+
+    function clearCart() {
+      cart = [];
+      activePacks = [];
+      cartOpenedOnce = false;
+      updateCartUI();
+    }
+
+    function toggleCart() {
+      document.getElementById('cartDrawer').classList.toggle('open');
+      document.getElementById('cartOverlay').classList.toggle('open');
+    }
+
+    function openCart() {
+      document.getElementById('cartDrawer').classList.add('open');
+      document.getElementById('cartOverlay').classList.add('open');
+    }
+
+    function sendCartWA() {
+      if (!cart.length) return;
+      let msg = "Hola! Quiero hacer este pedido COMASI:\n\n";
+      cart.forEach(i => { msg += `• ${i.name} x${i.qty} = S/ ${i.priceNew * i.qty}\n`; });
+      const totalNew = cart.reduce((s, i) => s + i.priceNew * i.qty, 0);
+      
+      // Calculate pack discount
+      let packDiscount = 0;
+      activePacks.forEach(ap => {
+        const pk = PKS.find(x => x.id === ap.pkId);
+        if (!pk) return;
+        const allPresent = ap.prodIds.every(pid => cart.some(c => c.id === pid));
+        if (allPresent) {
+          const sumIndividual = ap.prodIds.reduce((s, pid) => {
+            const item = cart.find(c => c.id === pid);
+            return s + (item ? item.priceNew : 0);
+          }, 0);
+          packDiscount += sumIndividual - pk.priceNew;
+          msg += `\n🎁 ${pk.name}: -S/ ${sumIndividual - pk.priceNew}`;
+        }
+      });
+      
+      const finalTotal = totalNew - packDiscount;
+      msg += `\n\nTotal: S/ ${finalTotal}\n\n¡Gracias!`;
+      window.open(`https://wa.me/51934917794?text=${encodeURIComponent(msg)}`, '_blank');
+    }
+
+
+    /* ==========================================================
+       RENDER: PRODUCTOS
+       #5: Muestra imagen si existe, sino emoji
+       ========================================================== */
+    function renderProducts(filter = 'all') {
+      const g = document.getElementById('productsGrid');
+      const f = filter === 'all' ? P : P.filter(p => p.cat === filter);
+
+      g.innerHTML = f.map(p => {
+        const disc = p.priceOld > p.priceNew ? Math.round((1 - p.priceNew / p.priceOld) * 100) : 0;
+        const imgHtml = p.img
+          ? `<img src="${p.img}" alt="${p.name}">`
+          : p.icon;
+
+        return `<div class="p-card" data-cat="${p.cat}">
+          <div class="p-badge bg-${p.cat.substring(0,2)}">${p.cat}</div>
+          ${disc ? `<div class="p-disc">-${disc}%</div>` : ''}
+          <div class="p-img" onclick="openModal(${p.id})">${imgHtml}</div>
+          <div class="p-body">
+            <div class="p-name" onclick="openModal(${p.id})">${p.name}</div>
+            <div class="p-format">${p.fmt || ''}</div>
+            <div class="p-desc">${p.desc}</div>
+            <div class="p-prices">
+              <span class="p-old">S/ ${p.priceOld}</span>
+              <span class="p-new">S/ ${p.priceNew}</span>
+            </div>
+            <div class="p-btns">
+              <button class="p-btn-wa" onclick="window.open('https://wa.me/51934917794?text=Hola!%20Quiero%20${encodeURIComponent(p.name)}','_blank')">💬 Consultar</button>
+              <button class="p-btn-cart" onclick="addToCart(${p.id})">🛒 Agregar</button>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+
+    /* ==========================================================
+       RENDER: PACKS
+       #2: Muestra imagen del pack
+       ========================================================== */
+    function renderPacks() {
+      document.getElementById('packsGrid').innerHTML = PKS.map(pk => {
+        const imgHtml = pk.img
+          ? `<img src="${pk.img}" alt="${pk.name}">`
+          : '📦';
+        const disc = pk.priceOld > pk.priceNew ? Math.round((1 - pk.priceNew / pk.priceOld) * 100) : 0;
+        return `<div class="pk-card" onclick="openPackModal(${pk.id})">
+          <div class="pk-img">${imgHtml}</div>
+          <div class="pk-body">
+            <div class="pk-lb">Pack ${pk.cnt} productos</div>
+            <div class="pk-nm">${pk.name}</div>
+            <div class="pk-ds">${pk.desc}</div>
+            <div class="pk-prods">${pk.prods.map(p => `<span>${p}</span>`).join('')}</div>
+            <p style="font-size:12px;color:var(--grn);margin-bottom:10px;font-weight:600">✓ ${pk.benefit}</p>
+            <div class="p-prices" style="margin-bottom:12px">
+              <span class="p-old">S/ ${pk.priceOld}</span>
+              <span class="p-new">S/ ${pk.priceNew}</span>
+              ${disc ? `<span style="background:#E53935;color:#fff;padding:2px 8px;border-radius:50px;font-size:10px;font-weight:700">-${disc}%</span>` : ''}
+            </div>
+            <div class="pk-ft">
+              <span style="font-size:12px;color:var(--text2)">Click para más info</span>
+              <div class="pk-btns">
+                <button class="p-btn-wa" onclick="event.stopPropagation();window.open('https://wa.me/51934917794?text=Hola!%20Quiero%20${encodeURIComponent(pk.name)}','_blank')" style="font-size:10px;padding:6px 10px">💬</button>
+                <button class="p-btn-cart" onclick="event.stopPropagation();addPackToCart(${pk.id})" style="font-size:10px;padding:6px 10px">🛒</button>
+              </div>
+            </div>
+          </div>
+        </div>`;
+      }).join('');
+    }
+
+    function addPackToCart(pkId) {
+      const pk = PKS.find(x => x.id === pkId);
+      if (!pk) return;
+      const prodIds = [];
+      pk.prods.forEach(pName => {
+        const prod = P.find(p => p.name === pName || p.name.startsWith(pName));
+        if (prod) {
+          addToCart(prod.id);
+          prodIds.push(prod.id);
+        }
+      });
+      // Register this pack for discount tracking
+      activePacks.push({ pkId: pk.id, prodIds: prodIds });
+      updateCartUI();
+    }
+
+
+    /* ==========================================================
+       FILTRAR PRODUCTOS
+       ========================================================== */
+    function filterProducts(cat) {
+      document.querySelectorAll('.fbtn').forEach(b => b.classList.remove('active'));
+      if (cat !== 'all') {
+        document.querySelectorAll('.fbtn').forEach(b => {
+          // Normalizar texto: quitar tildes para comparar correctamente
+          const btnText = b.textContent.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+          if (btnText.includes(cat)) b.classList.add('active');
+        });
+      } else {
+        document.querySelector('.fbtn').classList.add('active');
+      }
+      renderProducts(cat);
+      document.getElementById('productos')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+
+    /* ==========================================================
+       MODAL: PRODUCTO (#5: galería de 5 imágenes)
+       ========================================================== */
+    function openModal(id) {
+      const p = P.find(x => x.id === id);
+      if (!p) return;
+      const disc = p.priceOld > p.priceNew ? Math.round((1 - p.priceNew / p.priceOld) * 100) : 0;
+
+      // Imagen principal
+      const mainImg = p.img
+        ? `<img class="mod-main-img" id="modMainImg" src="${p.img}" alt="${p.name}">`
+        : `<div style="text-align:center;font-size:56px;margin-bottom:12px">${p.icon}</div>`;
+
+      // Galería de 5 imágenes (solo si hay al menos 1 con ruta)
+      const hasGallery = p.imgs && p.imgs.some(i => i !== '');
+      const galleryHtml = hasGallery
+        ? `<div class="mod-gallery">${p.imgs.map((src, idx) =>
+            src ? `<img src="${src}" alt="Foto ${idx+1}" onclick="document.getElementById('modMainImg').src='${src}'">` : ''
+          ).join('')}</div>`
+        : '';
+
+      document.getElementById('modalContent').innerHTML = `
+        ${mainImg}
+        ${galleryHtml}
+        <div class="mod-pn">${p.name}</div>
+        <div class="mod-cat bg-${p.cat.substring(0,2)}">${p.cat}${p.fmt ? ' · ' + p.fmt : ''}</div>
+        <p style="color:var(--text2);margin:10px 0 16px;font-size:14px">${p.desc}</p>
+        <div class="mod-prices">
+          <span class="mod-old">S/ ${p.priceOld}</span>
+          <span class="mod-new">S/ ${p.priceNew}</span>
+          ${disc ? `<span style="background:#E53935;color:#fff;padding:2px 8px;border-radius:50px;font-size:11px;font-weight:600">-${disc}%</span>` : ''}
+        </div>
+        <div class="mod-sec"><h5>Ingredientes</h5><p>${p.ing}</p></div>
+        ${p.sabor ? `<div class="mod-sec"><h5>Sabor</h5><p>${p.sabor}</p></div>` : ''}
+        <div class="mod-sec"><h5>Propiedades</h5><ul>${p.props.map(pr => `<li>${pr}</li>`).join('')}</ul></div>
+        <div class="mod-sec"><h5>Forma de Consumo</h5><p>${p.consumo}</p></div>
+        <div class="mod-btns">
+          <button class="mod-btn-wa" onclick="window.open('https://wa.me/51934917794?text=Hola!%20Quiero%20${encodeURIComponent(p.name)}','_blank')">💬 WhatsApp</button>
+          <button class="mod-btn-cart" onclick="addToCart(${p.id});closeModal()">🛒 Agregar al carrito</button>
+        </div>`;
+
+      document.getElementById('prodModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+
+    /* ==========================================================
+       MODAL: PACK
+       ========================================================== */
+    function openPackModal(pkId) {
+      const pk = PKS.find(x => x.id === pkId);
+      if (!pk) return;
+      const disc = pk.priceOld > pk.priceNew ? Math.round((1 - pk.priceNew / pk.priceOld) * 100) : 0;
+
+      const mainImg = pk.img
+        ? `<img class="mod-main-img" id="modMainImg" src="${pk.img}" alt="${pk.name}" style="object-fit:contain">`
+        : `<div style="text-align:center;font-size:48px;margin-bottom:10px">📦</div>`;
+
+      // Galería de imágenes del pack
+      const hasGallery = pk.imgs && pk.imgs.some(i => i !== '');
+      const galleryHtml = hasGallery
+        ? `<div class="mod-gallery">${pk.imgs.map((src, idx) =>
+            src ? `<img src="${src}" alt="Foto ${idx+1}" onclick="document.getElementById('modMainImg').src='${src}'">` : ''
+          ).join('')}</div>`
+        : '';
+
+      document.getElementById('modalContent').innerHTML = `
+        ${mainImg}
+        ${galleryHtml}
+        <div class="mod-pn">${pk.name}</div>
+        <div class="mod-cat" style="background:var(--pri)">Pack ${pk.cnt} productos</div>
+        <p style="color:var(--text2);margin:10px 0 16px;font-size:14px">${pk.desc}</p>
+        <div class="mod-prices">
+          <span class="mod-old">S/ ${pk.priceOld}</span>
+          <span class="mod-new">S/ ${pk.priceNew}</span>
+          ${disc ? `<span style="background:#E53935;color:#fff;padding:2px 8px;border-radius:50px;font-size:11px;font-weight:600">-${disc}%</span>` : ''}
+        </div>
+        <div class="mod-sec">
+          <h5>Productos incluidos</h5>
+          <div style="display:flex;flex-wrap:wrap;gap:6px;margin-top:6px">
+            ${pk.prods.map(p => `<span style="background:rgba(91,45,142,.06);padding:5px 14px;border-radius:50px;font-size:12px;font-weight:600;color:var(--pri)">${p}</span>`).join('')}
+          </div>
+        </div>
+        <div class="mod-sec"><h5>Beneficio</h5><p style="color:var(--grn);font-weight:600">✓ ${pk.benefit}</p></div>
+        <div class="mod-sec"><h5>Detalle</h5><p>${pk.detail}</p></div>
+        <div class="mod-btns">
+          <button class="mod-btn-wa" onclick="window.open('https://wa.me/51934917794?text=Hola!%20Quiero%20el%20${encodeURIComponent(pk.name)}','_blank')">💬 Consultar Pack</button>
+          <button class="mod-btn-cart" onclick="addPackToCart(${pk.id});closeModal()">🛒 Agregar todo al carrito</button>
+        </div>`;
+
+      document.getElementById('prodModal').classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      document.getElementById('prodModal').classList.remove('active');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('prodModal').addEventListener('click', function(e) {
+      if (e.target === this) closeModal();
+    });
+
+
+    /* ==========================================================
+       MENÚ MÓVIL (#12: panel lateral con overlay)
+       ========================================================== */
+    function toggleMobile() {
+      document.getElementById('mobNav').classList.toggle('active');
+      document.getElementById('mobOverlay').classList.toggle('active');
+    }
+
+
+    /* ==========================================================
+       NAVBAR: efecto scroll
+       ========================================================== */
+    window.addEventListener('scroll', () => {
+      document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+
+    /* ==========================================================
+       FORMULARIO DE CONTACTO → WhatsApp
+       ========================================================== */
+    function sendFormWA() {
+      const n  = document.getElementById('fName').value;
+      const ph = document.getElementById('fPhone').value;
+      const pr = document.getElementById('fProd').value;
+      const m  = document.getElementById('fMsg').value;
+      let t = `Hola! Soy ${n || 'un cliente'}.`;
+      if (ph) t += ` Tel: ${ph}.`;
+      if (pr) t += ` Me interesa: ${pr}.`;
+      if (m) t += ` ${m}`;
+      window.open(`https://wa.me/51934917794?text=${encodeURIComponent(t)}`, '_blank');
+    }
+
+
+    /* ==========================================================
+       INICIALIZACIÓN
+       ========================================================== */
+    renderProducts();
+    renderPacks();
+  </script>
+
+</body>
+</html>
